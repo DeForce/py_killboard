@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Journal</title>
+</head>
+
+<body>
+<p>Killboard</p>
+{% if not user.is_authenticated %}
+    <a href="login">Login</a>
+{% else %}
+    <a href="secret">Secret Page</a>
+    <br>
+    <a href="logout">Logout</a>
+{% endif %}
+</body>
+
+</html>
