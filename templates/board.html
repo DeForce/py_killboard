@@ -1,0 +1,2672 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ static('css/main.css') }}">
+    <title>Killboard</title>
+</head>
+
+<body>
+<table class="kb-main-table">
+    <tbody>
+    <tr>
+        <td class="left"></td>
+        <td class="center">
+            <div id="header"><a href="/"><img
+                    src="https://web.archive.org/logo/gorgons3.png"
+                    alt=""></a></div>
+            <div id="topmenu">
+                <table class="navigation">
+                    <tbody>
+                    <tr>
+                        <td><a href="https://web.archive.org/web/20130813051538/https://forum.serpent.is/">Forum</a>
+                        </td>
+                        <td><a id="top_menu_1" href="/">Home</a></td>
+                        <td><a id="top_menu_2"
+                               href="https://web.archive.org/web/20130813051538/http://serpent.is/">Site</a></td>
+                        <td><a id="top_menu_3"
+                               href="https://web.archive.org/alliance/3885/">Горгонята</a>
+                        </td>
+                        <td><a id="top_menu_4" href="/campaigns/">Campaigns</a>
+                        </td>
+                        <td><a id="top_menu_5" href="/battles/">Battles</a></td>
+                        <td><a id="top_menu_6" href="/post/">Post Mail</a></td>
+                        <td><a id="top_menu_7" href="/stats/">Stats</a></td>
+                        <td><a id="top_menu_10" href="/awards/">Awards</a></td>
+                        <td><a id="top_menu_11" href="/search/">Search</a></td>
+                        <td><a id="top_menu_14" href="/about/">About</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table class="usermenu">
+                <tbody>
+                <tr>
+                    <td>
+                        <form id="usermenu" name="usermenu" method="POST"><span
+                                id="usermenu-login-btn">login</span><span id="usermenu-login"><label><input id="kbuser"
+                                                                                                            name="kbuser"
+                                                                                                            type="text"
+                                                                                                            placeholder="username"></label><label><input
+                                id="kbpass" name="kbpass" type="password" placeholder="password"></label><label><input
+                                name="kbremember" id="kbremember" checked="checked" type="checkbox"><abbr
+                                title="Remember my login in this browser">remember</abbr></label><label><input
+                                name="kbsecure" id="kbsecure" type="checkbox"><abbr
+                                title="Only allow your session to be used from this IP address.">secure</abbr></label><input
+                                type="hidden" value="" id="kbpass_hash" name="kbpass_hash"><input name="Login"
+                                                                                                  value="Login"
+                                                                                                  type="hidden">[<a
+                                href="javascript:void(0);" id="kb-user-login"
+                                data-session-id="s0i4s2640eehbrosnip1lch0l2">Login</a>]</span>&nbsp;[<a
+                                href="/register/">Register</a>]
+                        </form>
+                    </td>
+                    <td><a href="/?a=reinforce">Timers</a></td>
+                    <td><a href="/killboards/">Killboards</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Recent Kills and Losses</h1>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="content">
+                        <table class="kb-subtable killsummarytable">
+                            <tbody>
+                            <tr>
+                                <td style="width: 25%;">
+                                    <table class="kb-table-thick killsummarytable__inner-table">
+                                        <tbody>
+                                        <tr class="kb-table-smallheader">
+                                            <th>Ship class</th>
+                                            <th>K</th>
+                                            <th>L</th>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Assault%20frigate/"
+                                                    class="kb-ship-Assault-frigate">Assault frigate</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Battlecruiser/"
+                                                    class="kb-ship-Battlecruiser">Battlecruiser</a></td>
+                                            <td><span class="kb-kill">3</span></td>
+                                            <td><span class="kb-loss">1</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Battleship/"
+                                                    class="kb-ship-Battleship">Battleship</a></td>
+                                            <td><span class="kb-kill">13</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Black%20Ops/"
+                                                    class="kb-ship-Black-Ops">Black Ops</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Capital%20Industrial/"
+                                                    class="kb-ship-Capital-Industrial">Capital Industrial</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Capsule/"
+                                                    class="kb-ship-Capsule">Capsule</a></td>
+                                            <td><span class="kb-kill">9</span></td>
+                                            <td><span class="kb-loss">2</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Carrier/"
+                                                    class="kb-ship-Carrier">Carrier</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Command%20ship/"
+                                                    class="kb-ship-Command-ship">Command ship</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Covert%20ops/"
+                                                    class="kb-ship-Covert-ops">Covert ops</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Cruiser/"
+                                                    class="kb-ship-Cruiser">Cruiser</a></td>
+                                            <td><span class="kb-kill">3</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Destroyer/"
+                                                    class="kb-ship-Destroyer">Destroyer</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style="width: 25%;">
+                                    <table class="kb-table-thick killsummarytable__inner-table">
+                                        <tbody>
+                                        <tr class="kb-table-smallheader">
+                                            <th>Ship class</th>
+                                            <th>K</th>
+                                            <th>L</th>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Dreadnought/"
+                                                    class="kb-ship-Dreadnought">Dreadnought</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Electronic%20Attack%20Ship/"
+                                                    class="kb-ship-Electronic-Attack-Ship">Electronic Attack Ship</a>
+                                            </td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Exhumer/"
+                                                    class="kb-ship-Exhumer">Exhumer</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Faction%20Battlecruiser/"
+                                                    class="kb-ship-Faction-Battlecruiser">Faction Battlecruiser</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Faction%20Battleship/"
+                                                    class="kb-ship-Faction-Battleship">Faction Battleship</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Faction%20Cruiser/"
+                                                    class="kb-ship-Faction-Cruiser">Faction Cruiser</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss">1</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Faction%20Frigate/"
+                                                    class="kb-ship-Faction-Frigate">Faction Frigate</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Freighter/"
+                                                    class="kb-ship-Freighter">Freighter</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Frigate/"
+                                                    class="kb-ship-Frigate">Frigate</a></td>
+                                            <td><span class="kb-kill">2</span></td>
+                                            <td><span class="kb-loss">1</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Heavy%20Interdictor/"
+                                                    class="kb-ship-Heavy-Interdictor">Heavy Interdictor</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Heavy%20assault/"
+                                                    class="kb-ship-Heavy-assault">Heavy assault</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss">1</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style="width: 25%;">
+                                    <table class="kb-table-thick killsummarytable__inner-table">
+                                        <tbody>
+                                        <tr class="kb-table-smallheader">
+                                            <th>Ship class</th>
+                                            <th>K</th>
+                                            <th>L</th>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Industrial/"
+                                                    class="kb-ship-Industrial">Industrial</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss">1</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Industrial%20Command%20Ship/"
+                                                    class="kb-ship-Industrial-Command-Ship">Industrial Command Ship</a>
+                                            </td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Infrastructure%20Modules/"
+                                                    class="kb-ship-Infrastructure-Modules">Infrastructure Modules</a>
+                                            </td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Interceptor/"
+                                                    class="kb-ship-Interceptor">Interceptor</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Interdictor/"
+                                                    class="kb-ship-Interdictor">Interdictor</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Jump%20Freighter/"
+                                                    class="kb-ship-Jump-Freighter">Jump Freighter</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Logistics/"
+                                                    class="kb-ship-Logistics">Logistics</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Marauder/"
+                                                    class="kb-ship-Marauder">Marauder</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Mining%20barge/"
+                                                    class="kb-ship-Mining-barge">Mining barge</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Mothership/"
+                                                    class="kb-ship-Mothership">Mothership</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Noobship/"
+                                                    class="kb-ship-Noobship">Noobship</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss">2</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style="width: 25%;">
+                                    <table class="kb-table-thick killsummarytable__inner-table">
+                                        <tbody>
+                                        <tr class="kb-table-smallheader">
+                                            <th>Ship class</th>
+                                            <th>K</th>
+                                            <th>L</th>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Orbital%20Structures/"
+                                                    class="kb-ship-Orbital-Structures">Orbital Structures</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/POS%20Large/"
+                                                    class="kb-ship-POS-Large">POS Large</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/POS%20Medium/"
+                                                    class="kb-ship-POS-Medium">POS Medium</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/POS%20Modules/"
+                                                    class="kb-ship-POS-Modules">POS Modules</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/POS%20Small/"
+                                                    class="kb-ship-POS-Small">POS Small</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Recon%20ship/"
+                                                    class="kb-ship-Recon-ship">Recon ship</a></td>
+                                            <td><span class="kb-kill">2</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Shuttle/"
+                                                    class="kb-ship-Shuttle">Shuttle</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Strategic%20Cruiser/"
+                                                    class="kb-ship-Strategic-Cruiser">Strategic Cruiser</a></td>
+                                            <td><span class="kb-kill">1</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Territory%20Modules/"
+                                                    class="kb-ship-Territory-Modules">Territory Modules</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-even">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Titan/"
+                                                    class="kb-ship-Titan">Titan</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        <tr class="kb-table-row-odd">
+                                            <td style="overflow: hidden;"><a
+                                                    href="/victim/Transport/"
+                                                    class="kb-ship-Transport">Transport</a></td>
+                                            <td><span class="kb-kill-null">0</span></td>
+                                            <td><span class="kb-loss-null">0</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <table class="kb-subtable killsummarytable__summary">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <table class="kb-table-thick killsummarytable__summary-totals">
+                                                    <tbody>
+                                                    <tr class="kb-table-row-even">
+                                                        <td>Totals:</td>
+                                                        <td class="total-kills">42 (<abbr title="Real kills (no trash)">32</abbr>)
+                                                        </td>
+                                                        <td class="total-kills">5.6 B</td>
+                                                        <td class="total-losses">9 (<abbr
+                                                                title="Real losses (no trash)">5</abbr>)
+                                                        </td>
+                                                        <td class="total-losses">552.2 M</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td>
+                                                <table class="kb-table-thick killsummarytable__summary-bars">
+                                                    <tbody>
+                                                    <tr class="kb-table-row-even">
+                                                        <td>Efficiency:</td>
+                                                        <td><span class="kb-efficiency-good">91.1 %</span></td>
+                                                        <td>
+                                                            <div class="kb-bar-efficiency">
+                                                                <div style="width:91.1%;"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="kb-campaigns-header">Active campaigns</h2>
+                        <table class="kb-campaigns-list-table">
+                            <thead>
+                            <tr class="kb-table-header">
+                                <th>Name</th>
+                                <th>Started</th>
+                                <th>Finished</th>
+                                <th>Kills</th>
+                                <th>ISK killed</th>
+                                <th>Losses</th>
+                                <th>ISK lost</th>
+                                <th>Efficiency</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="kb-table-row-odd">
+                                <td><a href="/?a=campaign_detail&amp;id=67"
+                                       class="">Fried Spectre</a></td>
+                                <td>2013-06-01</td>
+                                <td>Active</td>
+                                <td><span class="kb-kill">1005</span></td>
+                                <td><span class="kb-kill">169.08 B</span></td>
+                                <td><span class="kb-loss">213</span></td>
+                                <td><span class="kb-loss">22.90 B</span></td>
+                                <td><span class="kb-efficiency-good">88.07 %</span>
+                                    <div class="kb-bar-efficiency">
+                                        <div style="width:88.07%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="kb-kills-header">Ranked Killmails</h2>
+                        <div class="tabs">
+                            <ul>
+                                <li><a href="#ships">Expensive Ships</a></li>
+                                <li><a href="/?api=top_pods&amp;mode=">Expensive
+                                    Pods</a></li>
+                            </ul>
+                            <div id="ships">
+                                <table class="kb-table kb-table-expensive-kills">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width: 16.666666666667%" class="kb-table-row-even-kill">
+                                            <div><a href="/pilot/226451/"
+                                                    class="kb-pilot">xPandorumx</a></div>
+                                            <div><a href="/kill/1380704/"><img
+                                                    class="kb-icon-64"
+                                                    src="/img/ships/64_64/29990.png"
+                                                    alt=""></a></div>
+                                            <div class="kb-table-expensive-kills__ship-cell"><a
+                                                    href="/victim/Loki/"
+                                                    class="kb-ship-Strategic-Cruiser">Loki</a></div>
+                                            <div class="kb-loss">668.13 M ISK</div>
+                                        </td>
+                                        <td style="width: 16.666666666667%" class="kb-table-row-even-kill">
+                                            <div><a href="/pilot/46416/"
+                                                    class="kb-pilot">Flying Ocelot</a></div>
+                                            <div><a href="/kill/1381144/"><img
+                                                    class="kb-icon-64"
+                                                    src="/img/ships/64_64/24694.png"
+                                                    alt=""></a></div>
+                                            <div class="kb-table-expensive-kills__ship-cell"><a
+                                                    href="/victim/Maelstrom/"
+                                                    class="kb-ship-Battleship">Maelstrom</a></div>
+                                            <div class="kb-loss">296.17 M ISK</div>
+                                        </td>
+                                        <td style="width: 16.666666666667%" class="kb-table-row-even-kill">
+                                            <div><a href="/pilot/52299/"
+                                                    class="kb-pilot">made1</a></div>
+                                            <div><a href="/kill/1381146/"><img
+                                                    class="kb-icon-64"
+                                                    src="/img/ships/64_64/24688.png"
+                                                    alt=""></a></div>
+                                            <div class="kb-table-expensive-kills__ship-cell"><a
+                                                    href="/victim/Rokh/"
+                                                    class="kb-ship-Battleship">Rokh</a></div>
+                                            <div class="kb-loss">287.57 M ISK</div>
+                                        </td>
+                                        <td style="width: 16.666666666667%" class="kb-table-row-even-kill">
+                                            <div><a href="/pilot/125393/"
+                                                    class="kb-pilot">TAHK Belgorod</a></div>
+                                            <div><a href="/kill/1381176/"><img
+                                                    class="kb-icon-64"
+                                                    src="/img/ships/64_64/24694.png"
+                                                    alt=""></a></div>
+                                            <div class="kb-table-expensive-kills__ship-cell"><a
+                                                    href="/victim/Maelstrom/"
+                                                    class="kb-ship-Battleship">Maelstrom</a></div>
+                                            <div class="kb-loss">283.79 M ISK</div>
+                                        </td>
+                                        <td style="width: 16.666666666667%" class="kb-table-row-even-kill">
+                                            <div><a href="/pilot/283072/"
+                                                    class="kb-pilot">konstantin durov</a></div>
+                                            <div><a href="/kill/1381145/"><img
+                                                    class="kb-icon-64"
+                                                    src="/img/ships/64_64/24694.png"
+                                                    alt=""></a></div>
+                                            <div class="kb-table-expensive-kills__ship-cell"><a
+                                                    href="/victim/Maelstrom/"
+                                                    class="kb-ship-Battleship">Maelstrom</a></div>
+                                            <div class="kb-loss">280.32 M ISK</div>
+                                        </td>
+                                        <td style="width: 16.666666666667%" class="kb-table-row-even-kill">
+                                            <div><a href="/pilot/26686/"
+                                                    class="kb-pilot">DonRider</a></div>
+                                            <div><a href="/kill/1381174/"><img
+                                                    class="kb-icon-64"
+                                                    src="/img/ships/64_64/11971.png"
+                                                    alt=""></a></div>
+                                            <div class="kb-table-expensive-kills__ship-cell"><a
+                                                    href="/victim/Lachesis/"
+                                                    class="kb-ship-Recon-ship">Lachesis</a></div>
+                                            <div class="kb-loss">278.72 M ISK</div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <table class="kb-table killfilter-table">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="mcdropdown_container subtable-left"><span>Victim:&nbsp;</span>
+                                        <div style="height: 18px; width: 46px;">
+                                            <div class="mcdropdown"><span class="nofilter" id="" name=""
+                                                                          style="width: 46px; cursor: pointer;">&lt;Any&gt;</span><a
+                                                    href="#" tabindex="-1" style="cursor: pointer;"></a><input
+                                                    type="hidden" name="victim_filter" id="victim_filter"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mcdropdown_container subtable-left"><span>Used Ship:&nbsp;</span>
+                                        <div style="height: 18px; width: 45px;">
+                                            <div class="mcdropdown"><span class="nofilter" id="" name=""
+                                                                          style="width: 45px; cursor: pointer;">&lt;Any&gt;</span><a
+                                                    href="#" tabindex="-1" style="cursor: pointer;"></a><input
+                                                    type="hidden" name="usedship_filter" id="usedship_filter"></div>
+                                        </div>
+                                    </div>
+                                    <div class="subtable-right">Mixed | <a
+                                            href="//kills/">Kills</a> | <a
+                                            href="//losses/">Losses</a> |
+                                        <a href="//solokills/">Solokills</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <script type="text/javascript">
+                            <!--
+                            $(function () {
+                                $("#victim_filter").mcDropdown("#victim_filter_menu", {
+                                    dropShadow: false,
+                                    allowParentSelect: true,
+                                    hoverOverDelay: 600,
+                                    valueAttr: "data-link",
+                                    select: function (url, name) {
+                                        window.location = url;
+                                    }
+                                });
+
+                                $("#usedship_filter").mcDropdown("#usedship_filter_menu", {
+                                    dropShadow: false,
+                                    allowParentSelect: true,
+                                    hoverOverDelay: 600,
+                                    valueAttr: "data-link",
+                                    select: function (url, name) {
+                                        window.location = url;
+                                    }
+                                });
+                            });
+                            // -->
+                        </script>
+                        <!-- killlisttable.tpl -->
+
+                        <table class="kb-table-killlist">
+                            <tbody>
+                            <tr>
+                                <td colspan="10"><h3 class="kb-date-header">Tuesday, August 13th</h3></td>
+                            </tr>
+                            <tr class="kb-table-header">
+                                <th>Ship</th>
+                                <th>Victim</th>
+                                <th colspan="2">Alliance</th>
+                                <th>Corporation</th>
+                                <th>System</th>
+                                <th>Time</th>
+                                <th><abbr title="Involved Parties">Inv</abbr></th>
+                                <th><abbr title="Show involved">Exp</abbr></th>
+                            </tr>
+                            <tr data-killid="1381647" data-clickable="1"
+                                class="kb-table-row-odd-loss kill-table-row kb-table-footer">
+                                <td><a href="/kill/1381647/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/649.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Badger%20Mark%20II/"
+                                            class="kb-ship-Industrial">Badger Mark II</a></div>
+                                </td>
+                                <td><a href="/pilot/361113/" class="kb-pilot">Voldemar
+                                    Cybernetic</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3777_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3777/"
+                                       class="kb-alliance">The Gorgon Empire</a></td>
+                                <td><a href="/corp/885/"
+                                       class="kb-corp">PICOR</a></td>
+                                <td>Classified</td>
+                                <td>N/A</td>
+                                <td class="">N/A</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10"><h3 class="kb-date-header">Monday, August 12th</h3></td>
+                            </tr>
+                            <tr class="kb-table-header">
+                                <th>Ship</th>
+                                <th>Victim</th>
+                                <th colspan="2">Alliance</th>
+                                <th>Corporation</th>
+                                <th>System</th>
+                                <th>Time</th>
+                                <th><abbr title="Involved Parties">Inv</abbr></th>
+                                <th><abbr title="Show involved">Exp</abbr></th>
+                            </tr>
+                            <tr data-killid="1381149" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381149/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/4306.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Naga/"
+                                            class="kb-ship-Battlecruiser">Naga</a></div>
+                                </td>
+                                <td><a href="/pilot/157297/" class="kb-pilot">Alexander
+                                    Rotineque</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/269_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/269/"
+                                       class="kb-alliance">DarkSide.</a></td>
+                                <td><a href="/corp/40035/" class="kb-corp">POD
+                                    Based Lifeforms</a></td>
+                                <td><a href="/system/610/" class="kb-system">5NQI-E</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:34</td>
+                                <td class="solokill"></td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381633" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381633/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/2998.png"
+                                        alt=""></a><a href="/kill/1381634/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Noctis/"
+                                            class="kb-ship-Industrial">Noctis</a></div>
+                                </td>
+                                <td><a href="/pilot/370257/" class="kb-pilot">Deathburn</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/50_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/50/" class="kb-alliance">Circle-Of-Two</a>
+                                </td>
+                                <td><a href="/corp/58872/" class="kb-corp">Mordu's
+                                    Military Industrial Command</a></td>
+                                <td><a href="/system/894/" class="kb-system">W-UQA5</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Tribute</span>
+                                </td>
+                                <td>19:19</td>
+                                <td class="">16</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381144" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381144/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24694.png"
+                                        alt=""></a><a href="/kill/1381416/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Maelstrom/"
+                                            class="kb-ship-Battleship">Maelstrom</a></div>
+                                </td>
+                                <td><a href="/pilot/46416/" class="kb-pilot">Flying
+                                    Ocelot</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/3597/" class="kb-corp">Russian
+                                    Wings</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:15</td>
+                                <td class="">18</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381146" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381146/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24688.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Rokh/"
+                                            class="kb-ship-Battleship">Rokh</a></div>
+                                </td>
+                                <td><a href="/pilot/52299/" class="kb-pilot">made1</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/59710/" class="kb-corp">Russian
+                                    Cosmonautics Industry Bank</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:15</td>
+                                <td class="">27</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381147" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381147/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/226219/" class="kb-pilot">Voord
+                                    Itinen</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/4919_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/4919/"
+                                       class="kb-alliance">Just Passing By.</a></td>
+                                <td><a href="/corp/11325/" class="kb-corp">NEK
+                                    DEUS INTERSIT</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:15</td>
+                                <td class="">18</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381176" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381176/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24694.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Maelstrom/"
+                                            class="kb-ship-Battleship">Maelstrom</a></div>
+                                </td>
+                                <td><a href="/pilot/125393/" class="kb-pilot">TAHK
+                                    Belgorod</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/5211/" class="kb-corp">FROZEN
+                                    HEADS</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:15</td>
+                                <td class="">28</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381142" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381142/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/11985.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Basilisk/"
+                                            class="kb-ship-Logistics">Basilisk</a></div>
+                                </td>
+                                <td><a href="/pilot/6572/" class="kb-pilot">ArtjomN</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/8484/" class="kb-corp">Desperate
+                                    Venture Company</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:13</td>
+                                <td class="">26</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381148" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381148/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/11178.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Raptor/"
+                                            class="kb-ship-Interceptor">Raptor</a></div>
+                                </td>
+                                <td><a href="/pilot/340971/" class="kb-pilot">Harvestr1</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/10678/" class="kb-corp">EFT
+                                    Warriors</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:13</td>
+                                <td class="">10</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381162" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381162/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24694.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Maelstrom/"
+                                            class="kb-ship-Battleship">Maelstrom</a></div>
+                                </td>
+                                <td><a href="/pilot/147815/" class="kb-pilot">Al
+                                    Kion</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/8484/" class="kb-corp">Desperate
+                                    Venture Company</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:13</td>
+                                <td class="">32</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381174" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381174/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/11971.png"
+                                        alt=""></a><a href="/kill/1381387/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Lachesis/"
+                                            class="kb-ship-Recon-ship">Lachesis</a></div>
+                                </td>
+                                <td><a href="/pilot/26686/" class="kb-pilot">DonRider</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/3597/" class="kb-corp">Russian
+                                    Wings</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:13</td>
+                                <td class="">22</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381143" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381143/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/633.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Celestis/"
+                                            class="kb-ship-Cruiser">Celestis</a></div>
+                                </td>
+                                <td><a href="/pilot/315333/" class="kb-pilot">Roha
+                                    Ormand</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/77052/" class="kb-corp">Academia
+                                    SWH</a></td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:12</td>
+                                <td class="">15</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381145" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381145/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24694.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Maelstrom/"
+                                            class="kb-ship-Battleship">Maelstrom</a></div>
+                                </td>
+                                <td><a href="/pilot/283072/" class="kb-pilot">konstantin
+                                    durov</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/65487/" class="kb-corp">S.P'A.R'T.A</a>
+                                </td>
+                                <td><a href="/system/544/" class="kb-system">0TYR-T</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Wicked Creek</span></td>
+                                <td>19:12</td>
+                                <td class="">23</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381422" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381422/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/12038.png"
+                                        alt=""></a><a href="/kill/1381421/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Purifier/"
+                                            class="kb-ship-Covert-ops">Purifier</a></div>
+                                </td>
+                                <td><a href="/pilot/353873/" class="kb-pilot">vtrx</a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="/corp/369/" class="kb-corp">Deep
+                                    Core Mining Inc.</a></td>
+                                <td><a href="/system/1263/" class="kb-system">Y6-HPG</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Venal</span>
+                                </td>
+                                <td>19:02</td>
+                                <td class="">20</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380923" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380923/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/633.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Celestis/"
+                                            class="kb-ship-Cruiser">Celestis</a></div>
+                                </td>
+                                <td><a href="/pilot/253931/" class="kb-pilot">Sun
+                                    Tzii</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/81548/" class="kb-corp">Dreamcasters</a>
+                                </td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:55</td>
+                                <td class="">16</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381074" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381074/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a><a href="/kill/1381133/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/299111/" class="kb-pilot">Haaku
+                                    Naari</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/8412/" class="kb-corp">Trionix
+                                    Inc.</a></td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:55</td>
+                                <td class="">19</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381076" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381076/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a><a href="/kill/1381075/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/292362/" class="kb-pilot">Roman
+                                    Ermolaev</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/5211/" class="kb-corp">FROZEN
+                                    HEADS</a></td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:55</td>
+                                <td class="">17</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380922" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380922/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/324744/" class="kb-pilot">Laysara
+                                    Malukker</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/4919_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/4919/"
+                                       class="kb-alliance">Just Passing By.</a></td>
+                                <td><a href="/corp/11325/" class="kb-corp">NEK
+                                    DEUS INTERSIT</a></td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:54</td>
+                                <td class="">21</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381132" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381132/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/345528/" class="kb-pilot">Dongraf
+                                    Makanen</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/4919_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/4919/"
+                                       class="kb-alliance">Just Passing By.</a></td>
+                                <td><a href="/corp/11325/" class="kb-corp">NEK
+                                    DEUS INTERSIT</a></td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:54</td>
+                                <td class="">18</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381184" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381184/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/4310.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Tornado/"
+                                            class="kb-ship-Battlecruiser">Tornado</a></div>
+                                </td>
+                                <td><a href="/pilot/29505/" class="kb-pilot">Baya
+                                    freebooter</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/205_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/205/"
+                                       class="kb-alliance">Black Legion.</a></td>
+                                <td><a href="/corp/28644/" class="kb-corp">Higher
+                                    Than Everest</a></td>
+                                <td><a href="/system/861/" class="kb-system">AW1-2I</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Tribute</span>
+                                </td>
+                                <td>18:54</td>
+                                <td class="">17</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380924" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380924/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/360049/" class="kb-pilot">Pervich</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/4919_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/4919/"
+                                       class="kb-alliance">Just Passing By.</a></td>
+                                <td><a href="/corp/11325/" class="kb-corp">NEK
+                                    DEUS INTERSIT</a></td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:53</td>
+                                <td class="">27</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380957" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380957/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/121934/" class="kb-pilot">Tornicks</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/8484/" class="kb-corp">Desperate
+                                    Venture Company</a></td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:53</td>
+                                <td class="">18</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1381077" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1381077/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/640.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Scorpion/"
+                                            class="kb-ship-Battleship">Scorpion</a></div>
+                                </td>
+                                <td><a href="/pilot/355938/" class="kb-pilot">Belko
+                                    Giharko</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/4919_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/4919/"
+                                       class="kb-alliance">Just Passing By.</a></td>
+                                <td><a href="/corp/11325/" class="kb-corp">NEK
+                                    DEUS INTERSIT</a></td>
+                                <td><a href="/system/764/" class="kb-system">SN9-3Z</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Insmother</span>
+                                </td>
+                                <td>18:53</td>
+                                <td class="">18</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380912" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380912/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/22456.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Sabre/"
+                                            class="kb-ship-Interdictor">Sabre</a></div>
+                                </td>
+                                <td><a href="/pilot/64573/" class="kb-pilot">Mr
+                                    Atrus</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/108_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/108/"
+                                       class="kb-alliance">Legion of xXDEATHXx</a></td>
+                                <td><a href="/corp/480/" class="kb-corp">The
+                                    xDEATHx Squadron</a></td>
+                                <td><a href="/system/2441/" class="kb-system">BWF-ZZ</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Geminate</span>
+                                </td>
+                                <td>18:01</td>
+                                <td class="">18</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380795" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380795/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/17713.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Stabber%20Fleet%20Issue/"
+                                            class="kb-ship-Faction-Cruiser">Stabber Fleet Issue</a></div>
+                                </td>
+                                <td><a href="/pilot/22886/" class="kb-pilot">Antidot27</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/5004_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/5004/"
+                                       class="kb-alliance">M.I.F</a></td>
+                                <td><a href="/corp/9124/"
+                                       class="kb-corp">M.I.F.</a></td>
+                                <td><a href="/system/2441/" class="kb-system">BWF-ZZ</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Geminate</span>
+                                </td>
+                                <td>17:50</td>
+                                <td class="">22</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380915" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380915/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/3756.png"
+                                        alt=""></a><a href="/kill/1380914/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Gnosis/"
+                                            class="kb-ship-Battlecruiser">Gnosis</a></div>
+                                </td>
+                                <td><a href="/pilot/37058/" class="kb-pilot">RICOrus</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/5004_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/5004/"
+                                       class="kb-alliance">M.I.F</a></td>
+                                <td><a href="/corp/9124/"
+                                       class="kb-corp">M.I.F.</a></td>
+                                <td><a href="/system/2441/" class="kb-system">BWF-ZZ</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Geminate</span>
+                                </td>
+                                <td>17:49</td>
+                                <td class="">26</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380704" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380704/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/29990.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Loki/"
+                                            class="kb-ship-Strategic-Cruiser">Loki</a></div>
+                                </td>
+                                <td><a href="/pilot/226451/" class="kb-pilot">xPandorumx</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/3597/" class="kb-corp">Russian
+                                    Wings</a></td>
+                                <td><a href="/system/1045/" class="kb-system">Hemin</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Curse</span>
+                                </td>
+                                <td>15:14</td>
+                                <td class="">11</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380722" data-clickable="1" class="kb-table-row-odd-loss kill-table-row ">
+                                <td><a href="/kill/1380722/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/4308.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Talos/"
+                                            class="kb-ship-Battlecruiser">Talos</a></div>
+                                </td>
+                                <td><a href="/pilot/52347/" class="kb-pilot">Dark
+                                    Tiranus</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3777_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3777/"
+                                       class="kb-alliance">The Gorgon Empire</a></td>
+                                <td><a href="/corp/35926/" class="kb-corp">Iris
+                                    Covenant</a></td>
+                                <td><a href="/system/1045/" class="kb-system">Hemin</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Curse</span>
+                                </td>
+                                <td>15:14</td>
+                                <td class="">5</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380697" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380697/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/16242.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Thrasher/"
+                                            class="kb-ship-Destroyer">Thrasher</a></div>
+                                </td>
+                                <td><a href="/pilot/42855/" class="kb-pilot">stratospherik</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3934_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3934/"
+                                       class="kb-alliance">Darkspawn.</a></td>
+                                <td><a href="/corp/3324/" class="kb-corp">Fighters
+                                    of the Rising Sun</a></td>
+                                <td><a href="/system/1045/" class="kb-system">Hemin</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Curse</span>
+                                </td>
+                                <td>15:12</td>
+                                <td class="">2</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380723" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380723/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/598.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Breacher/"
+                                            class="kb-ship-Frigate">Breacher</a></div>
+                                </td>
+                                <td><a href="/pilot/332264/" class="kb-pilot">Kazume
+                                    Nakuo</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/factions/5_32.png"
+                                         alt=""></td>
+                                <td><span class="kb-alliance">Minmatar Republic</span></td>
+                                <td><a href="/corp/77733/" class="kb-corp">Pixel
+                                    Navigators</a></td>
+                                <td><a href="/system/3090/" class="kb-system">Kurniainen</a>
+                                    (<span class="kb-system-ss-0-1">0.1</span>) <span
+                                            class="kb-region">The Bleak Lands</span></td>
+                                <td>15:07</td>
+                                <td class="">2</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380669" data-clickable="1" class="kb-table-row-odd-loss kill-table-row ">
+                                <td><a href="/kill/1380669/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/608.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Atron/"
+                                            class="kb-ship-Frigate">Atron</a></div>
+                                </td>
+                                <td><a href="/pilot/214450/" class="kb-pilot">John
+                                    Nebail</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3777_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3777/"
+                                       class="kb-alliance">The Gorgon Empire</a></td>
+                                <td><a href="/corp/4406/" class="kb-corp">xMONOLITHx</a>
+                                </td>
+                                <td><a href="/system/3090/" class="kb-system">Kurniainen</a>
+                                    (<span class="kb-system-ss-0-1">0.1</span>) <span
+                                            class="kb-region">The Bleak Lands</span></td>
+                                <td>15:00</td>
+                                <td class="solokill"></td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380668" data-clickable="1" class="kb-table-row-odd-loss kill-table-row ">
+                                <td><a href="/kill/1380668/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/11999.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Vagabond/"
+                                            class="kb-ship-Heavy-assault">Vagabond</a></div>
+                                </td>
+                                <td><a href="/pilot/148569/" class="kb-pilot">J0hen</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3777_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3777/"
+                                       class="kb-alliance">The Gorgon Empire</a></td>
+                                <td><a href="/corp/4406/" class="kb-corp">xMONOLITHx</a>
+                                </td>
+                                <td><a href="/system/657/" class="kb-system">ARG-3R</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>14:23</td>
+                                <td class="">7</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380606" data-clickable="1" class="kb-table-row-odd-loss kill-table-row ">
+                                <td><a href="/kill/1380606/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/17713.png"
+                                        alt=""></a><a href="/kill/1380619/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Stabber%20Fleet%20Issue/"
+                                            class="kb-ship-Faction-Cruiser">Stabber Fleet Issue</a></div>
+                                </td>
+                                <td><a href="/pilot/139194/" class="kb-pilot">ZAM
+                                    NEMESIS</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3777_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3777/"
+                                       class="kb-alliance">The Gorgon Empire</a></td>
+                                <td><a href="/corp/4406/" class="kb-corp">xMONOLITHx</a>
+                                </td>
+                                <td><a href="/system/2363/" class="kb-system">CL-IRS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Etherium Reach</span></td>
+                                <td>10:27</td>
+                                <td class="">4</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380621" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380621/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/11961.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Huginn/"
+                                            class="kb-ship-Recon-ship">Huginn</a></div>
+                                </td>
+                                <td><a href="/pilot/220548/" class="kb-pilot">Diema
+                                    Depran</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1802_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1802/"
+                                       class="kb-alliance">Northern Associates.</a></td>
+                                <td><a href="/corp/772/" class="kb-corp">Project
+                                    0 Corp</a></td>
+                                <td><a href="/system/1158/" class="kb-system">36N-HZ</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Catch</span>
+                                </td>
+                                <td>10:12</td>
+                                <td class="">3</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380563" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380563/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/587.png"
+                                        alt=""></a><a href="/kill/1380589/"
+                                                      class="kb-btn-pod"></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Rifter/"
+                                            class="kb-ship-Frigate">Rifter</a></div>
+                                </td>
+                                <td><a href="/pilot/369966/" class="kb-pilot">Reaver
+                                    Andomer</a></td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="/corp/95561/" class="kb-corp">Muss
+                                    das sein...</a></td>
+                                <td><a href="/system/944/" class="kb-system">7Q-8Z2</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Great Wildlands</span></td>
+                                <td>09:07</td>
+                                <td class="">2</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380560" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380560/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/11999.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Vagabond/"
+                                            class="kb-ship-Heavy-assault">Vagabond</a></div>
+                                </td>
+                                <td><a href="/pilot/418/" class="kb-pilot">znacke1986</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3007_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3007/"
+                                       class="kb-alliance">The Unthinkables</a></td>
+                                <td><a href="/corp/22081/" class="kb-corp">Unforeseen
+                                    Consequences.</a></td>
+                                <td><a href="/system/681/" class="kb-system">1V-LI2</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>08:27</td>
+                                <td class="">2</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380517" data-clickable="1"
+                                class="kb-table-row-odd-kill kill-table-row kb-table-footer">
+                                <td><a href="/kill/1380517/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/621.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Caracal/"
+                                            class="kb-ship-Cruiser">Caracal</a></div>
+                                </td>
+                                <td><a href="/pilot/219579/" class="kb-pilot">LapuLapuisPinoy</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1802_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1802/"
+                                       class="kb-alliance">Northern Associates.</a></td>
+                                <td><a href="/corp/36004/" class="kb-corp">Saltatio
+                                    Vita</a></td>
+                                <td><a href="/system/711/" class="kb-system">KZFV-4</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>05:30</td>
+                                <td class="solokill"></td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10"><h3 class="kb-date-header">Sunday, August 11th</h3></td>
+                            </tr>
+                            <tr class="kb-table-header">
+                                <th>Ship</th>
+                                <th>Victim</th>
+                                <th colspan="2">Alliance</th>
+                                <th>Corporation</th>
+                                <th>System</th>
+                                <th>Time</th>
+                                <th><abbr title="Involved Parties">Inv</abbr></th>
+                                <th><abbr title="Show involved">Exp</abbr></th>
+                            </tr>
+                            <tr data-killid="1380391" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380391/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/structures/32_32/20062.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Caldari%20Control%20Tower%20Small/"
+                                            class="kb-ship-POS-Small">Caldari Control Tower Small</a></div>
+                                </td>
+                                <td><a href="/pilot/369874/" class="kb-pilot">POS@Dirty
+                                    Old Bastards</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/661/" class="kb-system">U-IVGH</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>21:26</td>
+                                <td class="">20</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380390" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380390/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24700.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Myrmidon/"
+                                            class="kb-ship-Battlecruiser">Myrmidon</a></div>
+                                </td>
+                                <td><a href="/pilot/13573/" class="kb-pilot">UDSaxman</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/188_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/188/"
+                                       class="kb-alliance">Important Internet Spaceship League</a></td>
+                                <td><a href="/corp/11535/" class="kb-corp">Important
+                                    Internet Corp</a></td>
+                                <td><a href="/system/1017/" class="kb-system">HLW-HP</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Curse</span>
+                                </td>
+                                <td>21:10</td>
+                                <td class="">2</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380384" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380384/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/structures/32_32/20062.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Caldari%20Control%20Tower%20Small/"
+                                            class="kb-ship-POS-Small">Caldari Control Tower Small</a></div>
+                                </td>
+                                <td><a href="/pilot/369874/" class="kb-pilot">POS@Dirty
+                                    Old Bastards</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>21:05</td>
+                                <td class="">17</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380276" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380276/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/22444.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Sleipnir/"
+                                            class="kb-ship-Command-ship">Sleipnir</a></div>
+                                </td>
+                                <td><a href="/pilot/145357/" class="kb-pilot">FRancuz1522</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:13</td>
+                                <td class="">14</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380278" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380278/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/11985.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Basilisk/"
+                                            class="kb-ship-Logistics">Basilisk</a></div>
+                                </td>
+                                <td><a href="/pilot/203093/" class="kb-pilot">Inamoto
+                                    Kyougishi</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:13</td>
+                                <td class="">18</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380279" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380279/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/638.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Raven/"
+                                            class="kb-ship-Battleship">Raven</a></div>
+                                </td>
+                                <td><a href="/pilot/368090/" class="kb-pilot">Tshing
+                                    Shea</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:13</td>
+                                <td class="">16</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380274" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380274/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24698.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Drake/"
+                                            class="kb-ship-Battlecruiser">Drake</a></div>
+                                </td>
+                                <td><a href="/pilot/171743/" class="kb-pilot">Annowyn</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:12</td>
+                                <td class="">17</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380275" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380275/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24688.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Rokh/"
+                                            class="kb-ship-Battleship">Rokh</a></div>
+                                </td>
+                                <td><a href="/pilot/84535/" class="kb-pilot">Jaden
+                                    Sparks</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:12</td>
+                                <td class="">17</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380273" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380273/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/639.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Tempest/"
+                                            class="kb-ship-Battleship">Tempest</a></div>
+                                </td>
+                                <td><a href="/pilot/19628/" class="kb-pilot">Wutman
+                                    aut</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:10</td>
+                                <td class="">20</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380277" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380277/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24696.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Harbinger/"
+                                            class="kb-ship-Battlecruiser">Harbinger</a></div>
+                                </td>
+                                <td><a href="/pilot/368384/" class="kb-pilot">pedra
+                                    Tzestu</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:10</td>
+                                <td class="">14</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380280" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380280/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/24694.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Maelstrom/"
+                                            class="kb-ship-Battleship">Maelstrom</a></div>
+                                </td>
+                                <td><a href="/pilot/369853/" class="kb-pilot">Ino
+                                    Gortrix</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/1124_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/1124/"
+                                       class="kb-alliance">Nulli Secunda</a></td>
+                                <td><a href="/corp/61339/" class="kb-corp">Dirty
+                                    Old Bastards</a></td>
+                                <td><a href="/system/702/" class="kb-system">4E-EZS</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span
+                                            class="kb-region">Scalding Pass</span></td>
+                                <td>20:08</td>
+                                <td class="">15</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380382" data-clickable="1" class="kb-table-row-odd-kill kill-table-row ">
+                                <td><a href="/kill/1380382/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/625.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Augoror/"
+                                            class="kb-ship-Cruiser">Augoror</a></div>
+                                </td>
+                                <td><a href="/pilot/22546/" class="kb-pilot">LeSkunk</a>
+                                </td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/4050_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/4050/"
+                                       class="kb-alliance">Knight's of the Black Sun</a></td>
+                                <td><a href="/corp/35648/" class="kb-corp">SKUNKWORKZ
+                                    STRATEGIC SERVICES</a></td>
+                                <td><a href="/system/1017/" class="kb-system">HLW-HP</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Curse</span>
+                                </td>
+                                <td>19:47</td>
+                                <td class="">15</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            <tr data-killid="1380267" data-clickable="1"
+                                class="kb-table-row-odd-kill kill-table-row kb-table-footer">
+                                <td><a href="/kill/1380267/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/629.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Rupture/"
+                                            class="kb-ship-Cruiser">Rupture</a></div>
+                                </td>
+                                <td><a href="/pilot/369852/" class="kb-pilot">Jah
+                                    Montegro</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3039_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3039/"
+                                       class="kb-alliance">RvB - RED Federation</a></td>
+                                <td><a href="/corp/6235/" class="kb-corp">Red
+                                    Federation</a></td>
+                                <td><a href="/system/1017/" class="kb-system">HLW-HP</a>
+                                    (<span class="kb-system-ss-0-0">0.0</span>) <span class="kb-region">Curse</span>
+                                </td>
+                                <td>19:10</td>
+                                <td class="">2</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                            </tbody>
+                        </table><!-- /killlisttable.tpl --><p>Page:&nbsp;1&nbsp;<a
+                            href="/page/2/">2</a>&nbsp;<a
+                            href="/page/3/">3</a>&nbsp;<a
+                            href="/page/4/">4</a>&nbsp;<a
+                            href="/page/5/">5</a>&nbsp;…&nbsp;<a
+                            href="/page/28/">28</a>&nbsp;<a
+                            href="/page/29/">29</a>&nbsp;<a
+                            href="/page/30/">30</a>&nbsp;<a
+                            href="/page/31/">31</a>&nbsp;</p></td>
+                    <td class="context" id="context">
+                        <table class="kb-table kb-context-box">
+                            <thead>
+                            <tr class="kb-table-smallheader">
+                                <th>Information</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="kb-table-row-even">
+                                <td class="menu-wrapper"><span class="informer-base">Eve Time<span
+                                        class="informer-right informer-base__clock"></span></span><br>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="kb-table kb-award-box kb-calendar-box">
+                            <thead>
+                            <tr class="kb-table-smallheader">
+                                <th>Navigation</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="kb-table-row-even kb-table-footer">
+                                <td id="calendar_body">
+                                    <table class="kb-subtable kb-table-calendar">
+                                        <tbody>
+                                        <tr class="kb-table-header">
+                                            <th><a class="calLink_cw" href="javascript:void(0)"
+                                                   onclick="calUpdate(7,2013);">&lt;</a></th>
+                                            <th><a class="calLink_cw"
+                                                   href="/2013-8/">August'13</a>
+                                            </th>
+                                            <th><a class="calLink_cw" href="javascript:void(0)"
+                                                   onclick="calUpdate(9,2013);">&gt;</a></th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <table class="kb-subtable">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="cal_cw_t">CW</td>
+                                                        <td class="cal_day_t">M</td>
+                                                        <td class="cal_day_t">T</td>
+                                                        <td class="cal_day_t">W</td>
+                                                        <td class="cal_day_t">T</td>
+                                                        <td class="cal_day_t">F</td>
+                                                        <td class="cal_day_t">S</td>
+                                                        <td class="cal_day_t">S</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w31/">31</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-7-29/">29</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-7-30/">30</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-7-31/">31</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-1/">1</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-2/">2</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-3/">3</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-4/">4</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w32/">32</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-5/">5</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-6/">6</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-7/">7</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-8/">8</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-9/">9</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-10/">10</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-11/">11</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw_s" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw_s';"><a
+                                                                class="calLink_cw"
+                                                                href="/2013-w33/">33</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-12/">12</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a
+                                                                class="calLinkToday"
+                                                                href="/2013-8-13/">13</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-14/">14</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-15/">15</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-16/">16</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-17/">17</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-18/">18</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w34/">34</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-19/">19</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-20/">20</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-21/">21</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-22/">22</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-23/">23</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-24/">24</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-25/">25</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w35/">35</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-26/">26</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-27/">27</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-28/">28</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-29/">29</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-30/">30</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-31/">31</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-9-1/">1</a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top Corporations</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/corps/4406_64.png"
+                                        alt="xMONOLITHx"><img
+                                        src="/img/awards/jollyr2.png"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/corp/4406/">xMONOLITHx</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">28</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/corp/35926/">Iris
+                                        Covenant</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:71.428571428571%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">20</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/corp/1022/">Dark Voodoo
+                                        Cult</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:60.714285714286%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">17</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(kills)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top killers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/48571_64.png"
+                                        alt="MaZaHisT"><img
+                                        src="/img/awards/eagle.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/48571/">MaZaHisT</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">17</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/242074/">Seth
+                                        Twentieth</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:94.117647058824%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">16</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/52347/">Dark
+                                        Tiranus</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">4</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/47939/">Envivore</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">5</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/19821/">Lenton Lust</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">6</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/247457/">Randolph
+                                        Sykes</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">7</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148272/">Liza Calm</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:76.470588235294%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">13</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">8</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/157079/">Norther
+                                        Stormrage</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:76.470588235294%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">13</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">9</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/236983/">Dragon
+                                        Hidden</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:70.588235294118%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">12</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">10</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/70629/">Ellisys</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:70.588235294118%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">12</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(kills)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top scorers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/48571_64.png"
+                                        alt="MaZaHisT"><img
+                                        src="/img/awards/redcross.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/48571/">MaZaHisT</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1309</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/242074/">Seth
+                                        Twentieth</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:99.770817417876%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1306</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/247457/">Randolph
+                                        Sykes</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:90.603514132926%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1186</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">4</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/52347/">Dark
+                                        Tiranus</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:83.193277310924%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1089</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">5</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/47939/">Envivore</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:83.040488922842%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1087</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">6</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/157079/">Norther
+                                        Stormrage</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:76.012223071047%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">995</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">7</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/236983/">Dragon
+                                        Hidden</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:73.032849503438%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">956</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">8</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148272/">Liza Calm</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:67.379679144385%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">882</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">9</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/19821/">Lenton Lust</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:66.997708174179%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">877</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">10</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/75679/">JohnMnemonic</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:65.546218487395%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">858</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(points)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top solokillers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/148272_64.png"
+                                        alt="Liza Calm"><img
+                                        src="/img/awards/cross.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148272/">Liza Calm</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/349205/">POS@Iris
+                                        Covenant</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(solo kills)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top losers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/52347_64.png"
+                                        alt="Dark Tiranus"><img
+                                        src="/img/awards/moon.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/52347/">Dark
+                                        Tiranus</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148569/">J0hen</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/214450/">John
+                                        Nebail</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">4</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/361113/">Voldemar
+                                        Cybernetic</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">5</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/139194/">ZAM
+                                        NEMESIS</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(losses)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="kb-subtable kb-footer">
+                <tbody>
+                <tr>
+                    <td>11 capsuleers and 16 guests browsing this site.</td>
+                </tr>
+                <tr>
+                    <td>Page generated in 0.01096 s. 8 (+17 cached) SQL queries took 0.01361 s. 14 cached templates
+                        <div>Used memory: 7.53 MB Peak: 17.41 MB</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="right"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

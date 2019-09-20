@@ -3,3 +3,4 @@
 db.sqlite3
 secrets.yaml
 venv/
+killboard/static/

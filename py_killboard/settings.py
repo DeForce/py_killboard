@@ -84,8 +84,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Third-party
-    'esi',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,6 +117,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'environment': 'py_killboard.jinja2.environment',
         },
     },
     {
@@ -142,6 +141,9 @@ WSGI_APPLICATION = 'py_killboard.wsgi.application'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
+
+# Session
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 # Tasks
 CELERYBEAT_SCHEDULE = {

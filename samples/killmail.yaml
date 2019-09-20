@@ -1,0 +1,54 @@
+{
+  'attackers': [
+  {
+    'alliance_id': 1683694957,
+    'character_id': 686208426,
+    'corporation_id': 1234433085,
+    'damage_done': 187,
+    'final_blow': False,
+    'security_status': -9.9,
+    'ship_type_id': 17738,
+    'weapon_type_id': 17738,
+    'faction_id': None
+  },
+  {
+    'character_id': 101363971,
+    'corporation_id': 98570127,
+    'damage_done': 181,
+    'final_blow': True,
+    'security_status': -9.6,
+    'ship_type_id': 17738,
+    'weapon_type_id': 3979,
+    'alliance_id': None,
+    'faction_id': None
+  }
+  ],
+  'killmail_id': 78866036,
+  'killmail_time': datetime.datetime(2019, 9, 9, 10, 49, 36, tzinfo=tzutc()),
+  'solar_system_id': 30003467,
+  'victim': {
+    'alliance_id': 99001407,
+    'character_id': 787175103,
+    'corporation_id': 98079302,
+    'damage_taken': 368,
+    'items': [
+    {
+      'flag': 89,
+      'item_type_id': 13216,
+      'quantity_destroyed': 1,
+      'singleton': 0,
+      'items': None,
+      'quantity_dropped': None
+    }
+    ],
+    'position': {
+      'x': -1774004171050.7283,
+      'y': 2760980021673.927,
+      'z': -539878320985.9337
+    },
+    'ship_type_id': 670,
+    'faction_id': None
+  },
+  'moon_id': None,
+  'war_id': None
+}

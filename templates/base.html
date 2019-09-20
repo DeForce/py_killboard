@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ static('default/aaa.css') }}">
+    <title>Killboard</title>
+</head>
+
+<body>
+<table class="kb-main-table">
+    <tbody>
+    <tr>
+        <td class="left"></td>
+        <td class="center">
+            <div id="header">
+                <a href="/">
+                    <img src="{{ static('header.png') }}" alt="">
+                </a>
+            </div>
+            <div id="topmenu">
+                <table class="navigation">
+                    <tbody>
+                    <tr>
+                        <td><a id="top_menu_1" href="/home/">Home</a></td>
+                        <td><a id="top_menu_4" href="/campaigns/">Campaigns</a></td>
+                        <td><a id="top_menu_5" href="/battles/">Battles</a></td>
+                        <td><a id="top_menu_7" href="/stats/">Stats</a></td>
+                        <td><a id="top_menu_10" href="/awards/">Awards</a></td>
+                        <td><a id="top_menu_11" href="/search/">Search</a></td>
+                        <td><a id="top_menu_14" href="/about/">About</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table class="usermenu">
+                <tbody>
+                <tr>
+                    <td>
+                        <a id="top_menu_14" href="/login">Login</a></td>
+                    </td>
+                    <td><a href="/reinforce">Timers</a></td>
+                    <td><a href="/killboards/">Killboards</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Recent Kills and Losses</h1>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="content">
+                        <table class="kb-subtable killsummarytable">
+                            <tbody>
+                            <tr>RecentKills</tr>
+                            <tr>Summary</tr>
+                            </tbody>
+                        </table>
+                        <h2 class="kb-campaigns-header">Active campaigns</h2>
+                        <table class="kb-campaigns-list-table">
+                        </table>
+                        <h2 class="kb-kills-header">Ranked Killmails</h2>
+                        <div class="tabs">
+                            <ul>
+                                <li><a href="#top_ships">Expensive Ships</a></li>
+                                <li><a href="#top_pods=">Expensive Pods</a></li>
+                            </ul>
+                            <div id="ships">
+                                <table class="kb-table kb-table-expensive-kills">
+                                    <tbody>
+                                    <tr>Top Kills Kere</tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <table class="kb-table killfilter-table">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="mcdropdown_container subtable-left"><span>Victim:&nbsp;</span>
+                                        <div style="height: 18px; width: 46px;">
+                                            <div class="mcdropdown"><span class="nofilter" id="" name=""
+                                                                          style="width: 46px; cursor: pointer;">&lt;Any&gt;</span><a
+                                                    href="#" tabindex="-1" style="cursor: pointer;"></a><input
+                                                    type="hidden" name="victim_filter" id="victim_filter"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mcdropdown_container subtable-left"><span>Used Ship:&nbsp;</span>
+                                        <div style="height: 18px; width: 45px;">
+                                            <div class="mcdropdown"><span class="nofilter" id="" name=""
+                                                                          style="width: 45px; cursor: pointer;">&lt;Any&gt;</span><a
+                                                    href="#" tabindex="-1" style="cursor: pointer;"></a><input
+                                                    type="hidden" name="usedship_filter" id="usedship_filter"></div>
+                                        </div>
+                                    </div>
+                                    <div class="subtable-right">Mixed | <a
+                                            href="/kills/">Kills</a> | <a
+                                            href="/losses/">Losses</a> |
+                                        <a href="/solokills/">Solokills</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <script type="text/javascript">
+                            <!--
+                            $(function () {
+                                $("#victim_filter").mcDropdown("#victim_filter_menu", {
+                                    dropShadow: false,
+                                    allowParentSelect: true,
+                                    hoverOverDelay: 600,
+                                    valueAttr: "data-link",
+                                    select: function (url, name) {
+                                        window.location = url;
+                                    }
+                                });
+
+                                $("#usedship_filter").mcDropdown("#usedship_filter_menu", {
+                                    dropShadow: false,
+                                    allowParentSelect: true,
+                                    hoverOverDelay: 600,
+                                    valueAttr: "data-link",
+                                    select: function (url, name) {
+                                        window.location = url;
+                                    }
+                                });
+                            });
+                            // -->
+                        </script>
+                        <!-- killlisttable.tpl -->
+                        <table class="kb-table-killlist">
+                            <tbody>
+                            <tr>
+                                <td colspan="10"><h3 class="kb-date-header">Tuesday, August 13th</h3></td>
+                            </tr>
+                            <tr class="kb-table-header">
+                                <th>Ship</th>
+                                <th>Victim</th>
+                                <th colspan="2">Alliance</th>
+                                <th>Corporation</th>
+                                <th>System</th>
+                                <th>Time</th>
+                                <th><abbr title="Involved Parties">Inv</abbr></th>
+                                <th><abbr title="Show involved">Exp</abbr></th>
+                            </tr>
+                            <tr data-killid="1381647" data-clickable="1"
+                                class="kb-table-row-odd-loss kill-table-row kb-table-footer">
+                                <td><a href="/kill/1381647/" class="-kill-link"><img
+                                        class="kb-table-killlist__ship-image"
+                                        src="/img/ships/32_32/649.png"
+                                        alt=""></a>
+                                    <div class="kb-table-killlist__ship-name"><a
+                                            href="/victim/Badger%20Mark%20II/"
+                                            class="kb-ship-Industrial">Badger Mark II</a></div>
+                                </td>
+                                <td><a href="/pilot/361113/" class="kb-pilot">Voldemar
+                                    Cybernetic</a></td>
+                                <td><img class="kb-icon-32"
+                                         src="/cache/alliances/3777_32.png"
+                                         alt=""></td>
+                                <td><a href="/alliance/3777/"
+                                       class="kb-alliance">The Gorgon Empire</a></td>
+                                <td><a href="/corp/885/"
+                                       class="kb-corp">PICOR</a></td>
+                                <td>Classified</td>
+                                <td>N/A</td>
+                                <td class="">N/A</td>
+                                <td class="btn-expand-kill-details"></td>
+                            </tr>
+                        </table><!-- /killlisttable.tpl --><p>Page:&nbsp;1&nbsp;<a
+                            href="/page/2/">2</a>&nbsp;<a
+                            href="/page/3/">3</a>&nbsp;<a
+                            href="/page/4/">4</a>&nbsp;<a
+                            href="/page/5/">5</a>&nbsp;…&nbsp;<a
+                            href="/page/28/">28</a>&nbsp;<a
+                            href="/page/29/">29</a>&nbsp;<a
+                            href="/page/30/">30</a>&nbsp;<a
+                            href="/page/31/">31</a>&nbsp;</p></td>
+                    <td class="context" id="context">
+                        <table class="kb-table kb-context-box">
+                            <thead>
+                            <tr class="kb-table-smallheader">
+                                <th>Information</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="kb-table-row-even">
+                                <td class="menu-wrapper"><span class="informer-base">Eve Time<span
+                                        class="informer-right informer-base__clock"></span></span><br>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="kb-table kb-award-box kb-calendar-box">
+                            <thead>
+                            <tr class="kb-table-smallheader">
+                                <th>Navigation</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="kb-table-row-even kb-table-footer">
+                                <td id="calendar_body">
+                                    <table class="kb-subtable kb-table-calendar">
+                                        <tbody>
+                                        <tr class="kb-table-header">
+                                            <th><a class="calLink_cw" href="javascript:void(0)"
+                                                   onclick="calUpdate(7,2013);">&lt;</a></th>
+                                            <th><a class="calLink_cw"
+                                                   href="/2013-8/">August'13</a>
+                                            </th>
+                                            <th><a class="calLink_cw" href="javascript:void(0)"
+                                                   onclick="calUpdate(9,2013);">&gt;</a></th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <table class="kb-subtable">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="cal_cw_t">CW</td>
+                                                        <td class="cal_day_t">M</td>
+                                                        <td class="cal_day_t">T</td>
+                                                        <td class="cal_day_t">W</td>
+                                                        <td class="cal_day_t">T</td>
+                                                        <td class="cal_day_t">F</td>
+                                                        <td class="cal_day_t">S</td>
+                                                        <td class="cal_day_t">S</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w31/">31</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-7-29/">29</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-7-30/">30</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-7-31/">31</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-1/">1</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-2/">2</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-3/">3</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-4/">4</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w32/">32</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-5/">5</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-6/">6</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-7/">7</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-8/">8</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-9/">9</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-10/">10</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-11/">11</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw_s" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw_s';"><a
+                                                                class="calLink_cw"
+                                                                href="/2013-w33/">33</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-12/">12</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a
+                                                                class="calLinkToday"
+                                                                href="/2013-8-13/">13</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-14/">14</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-15/">15</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-16/">16</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-17/">17</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-18/">18</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w34/">34</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-19/">19</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-20/">20</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-21/">21</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-22/">22</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-23/">23</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-24/">24</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-25/">25</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cal_cw" onmouseover="this.className='cal_cw_on';"
+                                                            onmouseout="this.className='cal_cw';"><a class="calLink_cw"
+                                                                                                     href="/2013-w35/">35</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-26/">26</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-27/">27</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-28/">28</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-29/">29</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-30/">30</a>
+                                                        </td>
+                                                        <td class="cal_day" onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day';"><a class="calLink"
+                                                                                                      href="/2013-8-31/">31</a>
+                                                        </td>
+                                                        <td class="cal_day_om"
+                                                            onmouseover="this.className='cal_day_on';"
+                                                            onmouseout="this.className='cal_day_om';"><a
+                                                                class="calLink_om"
+                                                                href="/2013-9-1/">1</a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top Corporations</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/corps/4406_64.png"
+                                        alt="xMONOLITHx"><img
+                                        src="/img/awards/jollyr2.png"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/corp/4406/">xMONOLITHx</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">28</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/corp/35926/">Iris
+                                        Covenant</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:71.428571428571%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">20</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/corp/1022/">Dark Voodoo
+                                        Cult</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:60.714285714286%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">17</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(kills)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top killers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/48571_64.png"
+                                        alt="MaZaHisT"><img
+                                        src="/img/awards/eagle.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/48571/">MaZaHisT</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">17</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/242074/">Seth
+                                        Twentieth</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:94.117647058824%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">16</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/52347/">Dark
+                                        Tiranus</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">4</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/47939/">Envivore</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">5</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/19821/">Lenton Lust</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">6</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/247457/">Randolph
+                                        Sykes</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:82.352941176471%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">14</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">7</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148272/">Liza Calm</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:76.470588235294%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">13</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">8</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/157079/">Norther
+                                        Stormrage</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:76.470588235294%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">13</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">9</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/236983/">Dragon
+                                        Hidden</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:70.588235294118%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">12</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">10</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/70629/">Ellisys</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:70.588235294118%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">12</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(kills)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top scorers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/48571_64.png"
+                                        alt="MaZaHisT"><img
+                                        src="/img/awards/redcross.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/48571/">MaZaHisT</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1309</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/242074/">Seth
+                                        Twentieth</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:99.770817417876%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1306</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/247457/">Randolph
+                                        Sykes</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:90.603514132926%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1186</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">4</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/52347/">Dark
+                                        Tiranus</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:83.193277310924%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1089</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">5</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/47939/">Envivore</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:83.040488922842%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1087</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">6</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/157079/">Norther
+                                        Stormrage</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:76.012223071047%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">995</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">7</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/236983/">Dragon
+                                        Hidden</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:73.032849503438%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">956</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">8</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148272/">Liza Calm</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:67.379679144385%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">882</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">9</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/19821/">Lenton Lust</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:66.997708174179%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">877</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">10</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/75679/">JohnMnemonic</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:65.546218487395%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">858</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(points)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top solokillers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/148272_64.png"
+                                        alt="Liza Calm"><img
+                                        src="/img/awards/cross.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148272/">Liza Calm</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/349205/">POS@Iris
+                                        Covenant</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(solo kills)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table class="kb-table kb-award-box">
+                            <tbody>
+                            <tr class="kb-award-box__header">
+                                <th class="kb-award-box__title" colspan="3">Top losers</th>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__title" colspan="3"><img
+                                        src="/cache/portraits/52347_64.png"
+                                        alt="Dark Tiranus"><img
+                                        src="/img/awards/moon.gif"
+                                        alt="award"></td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">1</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/52347/">Dark
+                                        Tiranus</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">2</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/148569/">J0hen</a>
+                                    </div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">3</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/214450/">John
+                                        Nebail</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">4</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/361113/">Voldemar
+                                        Cybernetic</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__position">5</td>
+                                <td>
+                                    <div class="kb-award-box__name"><a
+                                            href="/pilot/139194/">ZAM
+                                        NEMESIS</a></div>
+                                    <div class="kb-bar-efficiency kb-award-box__bar">
+                                        <div style="width:100%;"></div>
+                                    </div>
+                                </td>
+                                <td class="kb-award-box__value">1</td>
+                            </tr>
+                            <tr>
+                                <td class="kb-award-box__bottomline" colspan="3">(losses)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="kb-subtable kb-footer">
+                <tbody>
+                <tr>
+                    <td>11 capsuleers and 16 guests browsing this site.</td>
+                </tr>
+                <tr>
+                    <td>Page generated in 0.01096 s. 8 (+17 cached) SQL queries took 0.01361 s. 14 cached templates
+                        <div>Used memory: 7.53 MB Peak: 17.41 MB</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="right"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

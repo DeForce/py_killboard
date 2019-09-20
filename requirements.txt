@@ -1,3 +1,6 @@
+dotmap
+bravado
+oauthlib
+jinja2
 celery
 django
-adarnauth-esi
