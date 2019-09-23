@@ -136,12 +136,20 @@ class Token(models.Model):
         :param kwargs: Extra spec versioning as per `esi.clients.esi_client_factory`
         :return: :class:`bravado.client.SwaggerClient`
         """
-        return esi_client_factory(token=self, **kwargs)
+        swagger_spec = 'swagger.json'
+        return esi_client_factory(token=self, spec_file=swagger_spec, **kwargs)
 
     @classmethod
     def get_token_data(cls, access_token):
         session = OAuth2Session(app_settings.ESI_SSO_CLIENT_ID, token={'access_token': access_token})
         return session.request('get', app_settings.ESI_TOKEN_VERIFY_URL).json()
+
+    def check_and_refresh(self):
+        if self.expired:
+            if self.can_refresh:
+                self.refresh()
+            else:
+                raise TokenExpiredError()
 
     def update_token_data(self, commit=True):
         logger.debug("Updating token data for {0}".format(repr(self)))

@@ -18,16 +18,16 @@ def base(request):
     return render(request, 'base.html')
 
 
-def write_killmail(km_dict):
+def write_killmail(km_dict, client):
     km_id = km_dict['killmail_id']
     create = False
     if Killmail.objects.filter(id=km_id).exists():
         km = Killmail.objects.get(id=km_id)
-        km.update_mail(km_dict)
+        km.update_mail(km_dict, client)
     else:
         create = True
         km = Killmail()
-        km.create_mail(km_dict)
+        km.create_mail(km_dict, client)
     km.save()
     return create
 
@@ -40,7 +40,7 @@ def get_killmail_data(k_hash, k_id, client):
 
 def download_killmails(killmails, client):
     for km in killmails:
-        yield write_killmail(get_killmail_data(km['killmail_hash'], km['killmail_id'], client))
+        yield write_killmail(get_killmail_data(km['killmail_hash'], km['killmail_id'], client), client)
 
 
 @login_required(login_url='/login')

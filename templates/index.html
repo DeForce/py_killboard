@@ -34,18 +34,20 @@
         <th>System</th>
         <th>Time</th>
         <th><abbr title="Involved Parties">Inv</abbr></th>
-        <th><abbr title="Show involved">Exp</abbr></th>
+        <th>C</th>
     </tr>
     {% for killmail in killmails %}
     <tr>
-        <td>{{ killmail.ship_type }}</td>
-        <td>{{ killmail.victim }}</td>
-        <td colspan="2">{{ killmail.alliance }}</td>
-        <td>{{ killmail.corporation }}</td>
-        <td>{{ killmail.solar_system }}</td>
-        <td>{{ killmail.km_date }}</td>
-        <td>{{ killmail.attackers | length }}</td>
-        <td>Exp</td>
+        <td>
+            {{ killmail.ship_type.name }}
+        </td>
+        <td>{{ killmail.victim.name }}</td>
+        <td colspan="2">{{ killmail.alliance.name }}</td>
+        <td>{{ killmail.corporation.name }}</td>
+        <td>{{ killmail.solar_system.name }}</td>
+        <td>{{ killmail.km_date.strftime('%H:%M') }}</td>
+        <td>{{ killmail.attackers.count() }}</td>
+        <td>0</td>
     </tr>
     {% endfor %}
     </tbody>
