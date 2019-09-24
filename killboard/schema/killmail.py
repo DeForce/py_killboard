@@ -65,7 +65,8 @@ class Killmail(models.Model):
         self.war = mail['war_id']
         self.attackers_dict = json.dumps(mail['attackers'])
 
-        self.solar_system = self.api.process_solar_system(mail)
+        solar_system = self.api.process_solar_system(mail)
+        self.solar_system = solar_system
         self.ship_type = self.api.process_ship(mail['victim'])
 
         victim = self.api.process_character(mail['victim'])

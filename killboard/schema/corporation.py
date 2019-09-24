@@ -5,7 +5,7 @@ from killboard.schema.alliance import Alliance
 
 class Corporation(models.Model):
     id = models.IntegerField(primary_key=True)
-    name = models.TextField(max_length=100)
+    name = models.CharField(max_length=100)
 
     alliance = models.ForeignKey(Alliance, on_delete=models.DO_NOTHING, null=True)
 
