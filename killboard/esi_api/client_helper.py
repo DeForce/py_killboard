@@ -10,10 +10,7 @@ class APIHelper(object):
         self.api = client
 
     def process_class(self, json_data, cls, pk):
-        obj, created = getattr(cls, 'objects').get_or_create(id=pk)
-        if created:
-            obj.process(json_data, self)
-            obj.save()
+        obj, created = getattr(cls, 'objects').get_or_create_from_code(pk, json_data, self)
         return obj
 
     def process_character(self, json_data):

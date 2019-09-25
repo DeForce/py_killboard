@@ -1,0 +1,152 @@
+{% extends 'killboard/base.html' %}
+
+{% macro process_attacker(attacker, attacker_data) %}
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td><img class="kb-icon-32" src="https://image.eveonline.com/Character/{{ attacker.id }}_32.jpg"
+                             alt=""></td>
+                    <td>
+                        <div>{{ attacker.name }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img class="kb-icon-32"
+                             src="https://image.eveonline.com/Render/{{ attacker_data.ship.id }}_32.png" alt=""></td>
+                    <td>
+                        <div>{{ attacker_data.ship.name }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img class="kb-icon-32"
+                             src="https://image.eveonline.com/Type/{{ attacker_data.weapon.id }}_32.png" alt=""></td>
+                    <td>
+                        <div>{{ attacker_data.weapon.name }}</div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <div>Damage: {{ attacker_data.damage_done }}</div>
+            <div>Final Blow: {{ attacker_data.final_blow }}</div>
+        </td>
+    </tr>
+{% endmacro %}
+
+{% macro process_items(items) %}
+    <table>
+        {% for position in inventory_positions %}
+            {% for item in items.get(position, []) %}
+                <tr>
+                    <td>
+                        <div>{{ item.flag_name_text }}</div>
+                    </td>
+                    <td>
+                        <div>{{ item.name }}</div>
+                    </td>
+                    <td><div>{{ item.quantity_dropped }}/{{ item.quantity_destroyed }}/{{ item.quantity_dropped + item.quantity_destroyed }}</div></td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+{% endmacro %}
+
+
+{% block main_tables %}
+    <table class="kb-subtable kb-kill-details">
+        <tr>
+            <td>
+                <table class="kb-table kb-kill-details__victim">
+                    <tr>
+                        <td rowspan="3" class="kb-table-footer">
+                            <img class="kb-icon-64"
+                                 src="https://image.eveonline.com/Character/{{ killmail.victim.id }}_64.jpg" alt="">
+                        </td>
+                        <td>Victim</td>
+                        <td>{{ killmail.victim.name }}</td>
+
+                        {% if killmail.victim.alliance %}
+                            <td rowspan=3 class="kb-table-footer">
+                                <img class="kb-icon-64"
+                                     src="https://image.eveonline.com/Alliance/{{ killmail.alliance.id }}_64.png"
+                                     alt="">
+                            </td>
+                        {% endif %}
+                    </tr>
+
+                    <tr>
+                        <td>Corp:</td>
+                        <td>{{ killmail.victim.corporation.name }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ 'Faction' if killmail.victim.faction else 'Alliance' }}:</td>
+                        <td>{{ killmail.victim.alliance.name }}</td>
+                    </tr>
+                </table>
+
+                <H3>Involved parties: {{ killmail.attackers.count() }}</H3>
+                InvolvedSummary
+                <div id='involved_list'>
+                    <table>
+                        <tbody>
+                        {% for attacker in killmail.attackers.all() %}
+                            {{ process_attacker(attacker, killmail.attackers_info[(attacker.id | string)]) }}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                {% if killmail.comments %}
+                    <table>
+                        <tbody>
+                        <div>Comments Here</div>
+                        </tbody>
+                    </table>
+                {% endif %}
+            </td>
+
+            <td>
+                <table class="kb-table kb-kill-details__victim">
+                    <tr>
+                        <td rowspan=3 class="kb-table-footer">
+                            <img class="kb-icon-64"
+                                 src="https://image.eveonline.com/Render/{{ killmail.ship_type.id }}_64.png" alt="">
+                        </td>
+
+                        <td>Ship:</td>
+                        <td>
+                            <div>{{ killmail.ship_type.name }}</div>
+                            <div>{{ killmail.ship_type.type.name }}</div>
+                        </td>
+
+                        {# TODO: RelatedKill? #}
+                    </tr>
+
+                    <tr>
+                        <td>Location:</td>
+                        <td>
+                            <div>
+                                {{ killmail.solar_system.name }}
+                                ({{ '%0.1f' % killmail.solar_system.security_status }} {{ killmail.solar_system.security_class }})
+                            </div>
+                            <a class="kb-external"
+                               href="http://evemaps.dotlan.net/map/{{ killmail.solar_system.name | replace(' ', '_') }}">dotlan</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Damage:</td>
+                        <td>{{ killmail.damage_taken }}</td>
+                    </tr>
+                </table>
+
+                <H3>Ship details</H3>
+                <div id="ship_details">
+                    {{ process_items(killmail.items_info) }}
+                </div>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

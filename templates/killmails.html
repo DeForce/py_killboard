@@ -1,0 +1,71 @@
+{% extends 'killboard/base.html' %}
+
+{% block main_tables %}
+    <table>
+        <tbody>
+        <tr class="kb-table-header">
+            <th>Ship</th>
+            <th>Victim</th>
+            <th colspan="2">Alliance</th>
+            <th>Corporation</th>
+            <th>System</th>
+            <th>Time</th>
+            <th><abbr title="Involved Parties">Inv</abbr></th>
+            <th>C</th>
+        </tr>
+        {% for killmail in killmails %}
+            <tr>
+                <td class="main-row">
+                    <div class="kb-table-row-row">
+                        <img src="https://image.eveonline.com/Type/{{ killmail.ship_type.id }}_32.png"
+                             alt="Ship Logo">
+                        <div><a href="killmail/{{ killmail.id }}">{{ killmail.ship_type.name }}</a></div>
+                    </div>
+                </td>
+                <td class="main-row">
+                    <div class="kb-table-row-row">
+                        <div class="kb-table-row-column table-image">
+                            <img src="https://image.eveonline.com/Character/{{ killmail.victim.id }}_32.jpg"
+                                 alt="Character Logo">
+                        </div>
+                        <div class="kb-table-row-column table-text">{{ killmail.victim.name }}</div>
+                    </div>
+                </td>
+                <td class="main-row" colspan="2">
+                    <div class="kb-table-row-row">
+                        <div class="kb-table-row-column table-image">
+                            {% if killmail.alliance %}
+                                <img src="https://image.eveonline.com/Alliance/{{ killmail.alliance.id }}_32.png"
+                                     alt="Alliance Logo">
+                                </div>
+                                <div class="kb-table-row-column table-text">{{ killmail.alliance.name }}</div>
+                            {% else %}
+                                <p>No Alliance</p>
+                            {% endif %}
+                    </div>
+                </td>
+                <td class="main-row">
+                    <div class="kb-table-row-row">
+                        <div class="kb-table-row-column table-image">
+                            <img src="https://image.eveonline.com/Corporation/{{ killmail.corporation.id }}_32.png"
+                                 alt="Coproration Logo">
+                        </div>
+                        <div class="kb-table-row-column table-text">{{ killmail.corporation.name }}</div>
+                    </div>
+                </td>
+                <td class="main-row">
+                    {{ killmail.solar_system.name }}
+                    ({{ '%0.1f' % killmail.solar_system.security_status }} {{ killmail.solar_system.security_class }})
+                </td>
+                <td class="main-row">
+                    {{ killmail.km_date.strftime('%H:%M') }}
+                </td>
+                <td class="main-row">
+                    {{ killmail.attackers.count() }}
+                </td>
+                <td>0</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

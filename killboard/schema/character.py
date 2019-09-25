@@ -1,5 +1,6 @@
 from django.db import models
 
+from killboard.managers import EVEClassManager
 from killboard.schema.alliance import Alliance
 from killboard.schema.corporation import Corporation
 
@@ -12,6 +13,7 @@ class Character(models.Model):
     corporation = models.ForeignKey(
         Corporation, related_name='char_corporation', on_delete=models.DO_NOTHING, null=True)
 
+    objects = EVEClassManager()
     api = None
 
     def process(self, json_data, client):

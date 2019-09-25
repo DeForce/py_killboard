@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 def sso(request):
     logger.debug("Received callback for {0} session {1}".format(request.user, request.session.session_key[:5]))
+    redirect_back = request.session.get('redirect_back', '/')
     code = request.GET.get('code', None)
     state = request.GET.get('state', None)
 
@@ -84,7 +85,7 @@ def sso(request):
             token.delete()
             token = queryset.filter(user=token.user)[0]  # pick one at random
     token.save()
-    return redirect('/')
+    return redirect(redirect_back)
 
 
 def process_login(request):
@@ -100,6 +101,10 @@ def process_login(request):
     logger.debug("Redirecting {0} session {1} to SSO. Callback will be redirected to {2}".format(
         request.user, request.session.session_key[:5], url))
     request.session['state'] = state
+
+    redirect_after_url = request.GET.get('next')
+    if redirect_after_url:
+        request.session['redirect_back'] = redirect_after_url
 
     return redirect(redirect_url)
 

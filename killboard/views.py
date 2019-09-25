@@ -5,42 +5,24 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from helpers.eve_api_scopes import READ_KILLMAIL_PILOT
+from helpers.static import INVENTORY_POSITIONS
+from killboard.killmails.process import download_killmails
 from killboard.models import Token
 from killboard.schema.killmail import Killmail
 
 
 def index(request):
     killmails = Killmail.objects.all().order_by('-km_date')[:10]  # type: [Killmail]
-    return render(request, 'index.html', context={'killmails': killmails})
+    return render(request, 'killmails.html', context={'killmails': killmails})
+
+
+def open_killmail(request, killmail_id):
+    killmail = Killmail.objects.get(id=killmail_id)
+    return render(request, 'killmail.html', context={'killmail': killmail, 'inventory_positions': INVENTORY_POSITIONS})
 
 
 def base(request):
     return render(request, 'base.html')
-
-
-def write_killmail(km_dict, client):
-    km_id = km_dict['killmail_id']
-    create = False
-    if Killmail.objects.filter(id=km_id).exists():
-        km = Killmail.objects.get(id=km_id)
-        km.update_mail(km_dict, client)
-    else:
-        create = True
-        km = Killmail()
-        km.create_mail(km_dict, client)
-    km.save()
-    return create
-
-
-def get_killmail_data(k_hash, k_id, client):
-    data = client.Killmails.get_killmails_killmail_id_killmail_hash(
-        killmail_hash=k_hash, killmail_id=k_id)
-    return data.result()
-
-
-def download_killmails(killmails, client):
-    for km in killmails:
-        yield write_killmail(get_killmail_data(km['killmail_hash'], km['killmail_id'], client), client)
 
 
 @login_required(login_url='/login')

@@ -120,3 +120,14 @@ class TokenManager(models.Manager):
         :rtype: :class:`esi.managers.TokenQueryset`
         """
         return TokenQueryset(self.model, using=self._db)
+
+
+class EVEClassManager(models.Manager):
+    def get_or_create_from_code(self, i_id, json_data, api):
+        try:
+            return self.get(id=i_id), False
+        except self.model.DoesNotExist:
+            item = self.model(id=i_id)
+            item.process(json_data, api)
+            item.save()
+            return item, True
