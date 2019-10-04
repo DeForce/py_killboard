@@ -25,18 +25,33 @@
     <tbody>
     <tr>
         <td>
-            <div>Killboard</div>
-            <br/>
-            <div class="kb-welcome">Hello, {{ 'Anonymous' if user.is_anonymous else user.username }}</div>
-            <div class="kb-menu">
-                {% for item, config in header_menu.items() %}
-                    {% if not user.is_authenticated and config['auth'] %}
-                    {% elif user.is_authenticated and config.get('only_auth', False) %}
-                    {% else %}
-                        <div class="kb-menu-item"><a href="{{ config['url'] }}">{{ item }}</a></div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+            <table>
+                <tr>
+                    <td>
+                        <div>Killboard</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="kb-welcome">Hello, {{ 'Anonymous' if user.is_anonymous else user.username }}</div>
+                    </td>
+                </tr>
+                <tr class="kb-menu">
+                    {% for item, config in header_menu.items() %}
+                        {% if not user.is_authenticated and config['auth'] %}
+                        {% elif user.is_authenticated and config.get('only_auth', False) %}
+                        {% else %}
+                            <td>
+                                <div class="kb-menu-item"><a href="{{ config['url'] }}">{{ item }}</a></div>
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </table>
+            <div class="spacer"></div>
+            {% block secondary_tables %}
+            {% endblock %}
+            <div class="spacer"></div>
             {% block main_tables %}
             {% endblock %}
         </td>

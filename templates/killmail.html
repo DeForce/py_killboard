@@ -1,19 +1,22 @@
 {% extends 'killboard/base.html' %}
 
-{% macro process_attacker(attacker, attacker_data) %}
+{% macro process_attacker(attacker_data, main_mail) %}
     <tr>
-        <td>
+        <td class="kb-table-row-involved">
             <table>
                 <tr>
-                    <td><img class="kb-icon-32" src="https://image.eveonline.com/Character/{{ attacker.id }}_32.jpg"
+                    <td><img class="kb-icon-32"
+                             src="https://image.eveonline.com/Character/{{ attacker_data.character.id }}_32.jpg"
                              alt=""></td>
                     <td>
-                        <div>{{ attacker.name }}</div>
+                        <div>
+                            <a href="/character/{{ attacker_data.character.id }}">{{ attacker_data.character.name }}</a>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td><img class="kb-icon-32"
-                             src="https://image.eveonline.com/Render/{{ attacker_data.ship.id }}_32.png" alt=""></td>
+                             src="https://image.eveonline.com/Type/{{ attacker_data.ship.id }}_32.png" alt=""></td>
                     <td>
                         <div>{{ attacker_data.ship.name }}</div>
                     </td>
@@ -29,6 +32,7 @@
         </td>
         <td>
             <div>Damage: {{ attacker_data.damage_done }}</div>
+            <div>Percent: {{ '%0.1f' % ((attacker_data.damage_done / main_mail.damage_taken) * 100) }}%</div>
             <div>Final Blow: {{ attacker_data.final_blow }}</div>
         </td>
     </tr>
@@ -36,25 +40,42 @@
 
 {% macro process_items(items) %}
     <table>
-        {% for position in inventory_positions %}
-            {% for item in items.get(position, []) %}
-                <tr>
+        {% for flag_id, item_list in items.items() %}
+            {% if item_list %}
+                {% for item in item_list %}
+                <tr class="kb-table-killmail-item">
                     <td>
                         <div>{{ item.flag_name_text }}</div>
                     </td>
+                    <td><img class="kb-icon-32"
+                             src="https://image.eveonline.com/Type/{{ item.id }}_32.png" alt=""></td>
                     <td>
                         <div>{{ item.name }}</div>
                     </td>
-                    <td><div>{{ item.quantity_dropped }}/{{ item.quantity_destroyed }}/{{ item.quantity_dropped + item.quantity_destroyed }}</div></td>
+                    <td>
+                        <div>{{ item.quantity_dropped }}/{{ item.quantity_destroyed }}/{{ item.quantity_dropped + item.quantity_destroyed }}</div>
+                    </td>
                 </tr>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <tr class="kb-table-killmail-item">
+                    <td>
+                        <div>{{ flags[flag_id].flagText }}</div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div>Empty</div>
+                    </td>
+                    <td></td>
+                </tr>
+            {% endif %}
         {% endfor %}
     </table>
 {% endmacro %}
 
 
 {% block main_tables %}
-    <table class="kb-subtable kb-kill-details">
+    <table class="kb-subtable tb-table-kill-details">
         <tr>
             <td>
                 <table class="kb-table kb-kill-details__victim">
@@ -87,12 +108,12 @@
                 </table>
 
                 <H3>Involved parties: {{ killmail.attackers.count() }}</H3>
-                InvolvedSummary
+
                 <div id='involved_list'>
                     <table>
                         <tbody>
-                        {% for attacker in killmail.attackers.all() %}
-                            {{ process_attacker(attacker, killmail.attackers_info[(attacker.id | string)]) }}
+                        {% for attacker in (killmail.attackers.all() | sort(reverse=True, attribute='damage_done')) %}
+                            {{ process_attacker(attacker, killmail) }}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -107,8 +128,8 @@
                 {% endif %}
             </td>
 
-            <td>
-                <table class="kb-table kb-kill-details__victim">
+            <td class="tb-table-kill-details">
+                <table class="tb-table-kill-details-table">
                     <tr>
                         <td rowspan=3 class="kb-table-footer">
                             <img class="kb-icon-64"
@@ -130,9 +151,10 @@
                             <div>
                                 {{ killmail.solar_system.name }}
                                 ({{ '%0.1f' % killmail.solar_system.security_status }} {{ killmail.solar_system.security_class }})
+                                {{ killmail.solar_system.constellation.region.name }}
                             </div>
                             <a class="kb-external"
-                               href="http://evemaps.dotlan.net/map/{{ killmail.solar_system.name | replace(' ', '_') }}">dotlan</a>
+                               href="http://evemaps.dotlan.net/map/{{ killmail.solar_system.constellation.region.name }}/{{ killmail.solar_system.name | replace(' ', '_') }}">dotlan</a>
                         </td>
                     </tr>
 

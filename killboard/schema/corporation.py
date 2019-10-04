@@ -14,5 +14,9 @@ class Corporation(models.Model):
 
     def process(self, json_data, client):
         corp = client.api.Corporation.get_corporations_corporation_id(corporation_id=self.id).result()
+
+        if corp['alliance_id']:
+            alliance, _ = Alliance.objects.get_or_create_from_code(corp['alliance_id'], corp, client)
+            self.alliance = alliance
         self.name = corp['name']
         self.save()

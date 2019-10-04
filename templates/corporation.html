@@ -1,0 +1,55 @@
+{% extends 'killmails.html' %}
+
+{% block secondary_tables %}
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <table class="kb-table kb-kill-details__victim">
+                    <tr>
+                        <td rowspan="3" class="kb-table-footer">
+                            <img class="kb-icon-64"
+                                 src="https://image.eveonline.com/Corporation/{{ corporation.id }}_64.png" alt="">
+                        </td>
+                        <td></td>
+                        <td></td>
+                        {% if corporation.alliance %}
+                            <td rowspan=3 class="kb-table-footer">
+                                <img class="kb-icon-64"
+                                     src="https://image.eveonline.com/Alliance/{{ corporation.alliance.id }}_64.png"
+                                     alt="">
+                            </td>
+                        {% else %}
+                            <td rowspan=3 class="kb-table-footer"></td>
+                        {% endif %}
+                    </tr>
+
+                    <tr>
+                        <td>Corp:</td>
+                        <td>{{ corporation.name }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ 'Faction' if corporation.faction else 'Alliance' }}:</td>
+                        <td>{{ corporation.alliance.name }}</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <div>Kills: {{ stats.kills }}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Losses: {{ stats.losses }}</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

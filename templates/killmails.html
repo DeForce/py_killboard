@@ -14,53 +14,68 @@
             <th>C</th>
         </tr>
         {% for killmail in killmails %}
-            <tr>
-                <td class="main-row">
-                    <div class="kb-table-row-row">
-                        <img src="https://image.eveonline.com/Type/{{ killmail.ship_type.id }}_32.png"
-                             alt="Ship Logo">
-                        <div><a href="killmail/{{ killmail.id }}">{{ killmail.ship_type.name }}</a></div>
-                    </div>
+            {% set is_ally = killmail.victim.id in allies
+            or killmail.corporation.id in allies
+            or killmail.alliance.id in allies %}
+            <tr class="{{ 'kb-table-killmail-loss' if is_ally else 'kb-table-killmail-win' }} kb-table-killmail">
+                <td class="kb-table-killmail-column">
+                    <table>
+                        <tr>
+                            <td>
+                                <img class="kb-table-image" src="https://image.eveonline.com/Type/{{ killmail.ship_type.id }}_32.png"
+                                     alt="Ship Logo">
+                            </td>
+                            <td>
+                                <div><a href="/killmail/{{ killmail.id }}">{{ killmail.ship_type.name }}</a></div>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
-                <td class="main-row">
+                <td class="kb-table-killmail-column">
                     <div class="kb-table-row-row">
-                        <div class="kb-table-row-column table-image">
-                            <img src="https://image.eveonline.com/Character/{{ killmail.victim.id }}_32.jpg"
+                        <div class="kb-table-row-column">
+                            <img class="kb-table-image" src="https://image.eveonline.com/Character/{{ killmail.victim.id }}_32.jpg"
                                  alt="Character Logo">
                         </div>
-                        <div class="kb-table-row-column table-text">{{ killmail.victim.name }}</div>
+                        <div class="kb-table-row-column kb-table-text"><a
+                                href="/character/{{ killmail.victim.id }}">{{ killmail.victim.name }}</a></div>
                     </div>
                 </td>
-                <td class="main-row" colspan="2">
+                <td class="kb-table-killmail-column" colspan="2">
                     <div class="kb-table-row-row">
-                        <div class="kb-table-row-column table-image">
+                        <div class="kb-table-row-column kb-table-image">
                             {% if killmail.alliance %}
-                                <img src="https://image.eveonline.com/Alliance/{{ killmail.alliance.id }}_32.png"
+                                <img class="kb-table-image" src="https://image.eveonline.com/Alliance/{{ killmail.alliance.id }}_32.png"
                                      alt="Alliance Logo">
                                 </div>
-                                <div class="kb-table-row-column table-text">{{ killmail.alliance.name }}</div>
+                                <div class="kb-table-row-column kb-table-text"><a
+                                        href="/alliance/{{ killmail.alliance.id }}">{{ killmail.alliance.name }}</a>
+                                </div>
                             {% else %}
                                 <p>No Alliance</p>
                             {% endif %}
                     </div>
                 </td>
-                <td class="main-row">
+                <td class="kb-table-killmail-column">
                     <div class="kb-table-row-row">
-                        <div class="kb-table-row-column table-image">
-                            <img src="https://image.eveonline.com/Corporation/{{ killmail.corporation.id }}_32.png"
+                        <div class="kb-table-row-column kb-table-image">
+                            <img class="kb-table-image" src="https://image.eveonline.com/Corporation/{{ killmail.corporation.id }}_32.png"
                                  alt="Coproration Logo">
                         </div>
-                        <div class="kb-table-row-column table-text">{{ killmail.corporation.name }}</div>
+                        <div class="kb-table-row-column kb-table-text"><a
+                                href="/corporation/{{ killmail.corporation.id }}">{{ killmail.corporation.name }}</a>
+                        </div>
                     </div>
                 </td>
-                <td class="main-row">
-                    {{ killmail.solar_system.name }}
+                <td class="kb-table-killmail-column">
+                    <a href="/system/{{ killmail.solar_system.id }}">{{ killmail.solar_system.name }}</a>
                     ({{ '%0.1f' % killmail.solar_system.security_status }} {{ killmail.solar_system.security_class }})
+                    {{ killmail.solar_system.region.name }}
                 </td>
-                <td class="main-row">
+                <td class="kb-table-killmail-column">
                     {{ killmail.km_date.strftime('%H:%M') }}
                 </td>
-                <td class="main-row">
+                <td class="kb-table-killmail-column">
                     {{ killmail.attackers.count() }}
                 </td>
                 <td>0</td>

@@ -3,29 +3,28 @@ import json
 
 from django.db import models
 
-from helpers.static import INV_FLAGS
+from helpers.static import INV_FLAGS, RIGS, HIGH_SLOTS, MEDIUM_SLOTS, LOW_SLOTS
 from killboard.esi_api.client_helper import APIHelper
 from killboard.managers import EVEClassManager
 from killboard.schema.alliance import Alliance
-from killboard.schema.character import Character
+from killboard.schema.character import Character, Attacker
 from killboard.schema.comment import Comment
 from killboard.schema.corporation import Corporation
 from killboard.schema.faction import Faction
 from killboard.schema.ship import Ship, ItemType
 from killboard.schema.solar_system import SolarSystem
 
-
-class Attacker(object):
-    def __init__(self, item, api):
-        self.character = Character.objects.get(id=item['character_id'])
-        self.ship = Ship.objects.get(id=item['ship_type_id'])
-        self.weapon = ItemType.objects.get(id=item['weapon_type_id'])
-        self.damage_done = item['damage_done']
-        self.final_blow = item['final_blow']
+SLOTS_TUPLE = [
+    ('rigs', RIGS),
+    ('high', HIGH_SLOTS),
+    ('medium', MEDIUM_SLOTS),
+    ('low', LOW_SLOTS)
+]
 
 
 class KillmailItem(object):
     def __init__(self, item, api):
+        self.id = item['item_type_id']
         self.flag = INV_FLAGS.get(item['flag'])
         self.flag_id = item['flag']
         self.flag_name_text = self.flag['flagText']
@@ -58,8 +57,7 @@ class Killmail(models.Model):
     corporation = models.ForeignKey(Corporation, related_name='corporation', on_delete=models.DO_NOTHING)
     faction = models.ForeignKey(Faction, related_name='faction', on_delete=models.DO_NOTHING, null=True)
 
-    attackers_dict = models.TextField()
-    attackers = models.ManyToManyField(Character, related_name='attackers')
+    attackers = models.ManyToManyField(Attacker, related_name='attackers')
     comments = models.ManyToManyField(Comment, related_name='comments')
 
     objects = EVEClassManager()
@@ -67,15 +65,17 @@ class Killmail(models.Model):
     api = None
 
     @property
-    def attackers_info(self):
-        attackers = json.loads(self.attackers_dict)
-        return {key: Attacker(value, self.api) for key, value in attackers.items()}
-
-    @property
     def items_info(self):
         items = json.loads(self.items_dict)
 
         fill_inventory = collections.defaultdict(list)
+
+        for slot, range_item in SLOTS_TUPLE:
+            slot_count = getattr(self.ship_type, slot)
+            if slot_count:
+                for index in range(range_item.start, range_item.start + slot_count + 1):
+                    fill_inventory[index] = []
+
         for key, value in items.items():
             item = KillmailItem(value, self.api)
             fill_inventory[item.flag_id].append(item)
@@ -113,7 +113,6 @@ class Killmail(models.Model):
         self.damage_taken = mail['victim']['damage_taken']
         self.moon = mail['moon_id']
         self.war = mail['war_id']
-        self.attackers_dict = self.upload_attackers(mail['attackers'])
         self.items_dict = self.upload_items(mail['victim']['items'])
 
         solar_system = self.api.process_solar_system(mail)
@@ -135,8 +134,7 @@ class Killmail(models.Model):
 
         self.save()
         for attacker in mail['attackers']:
-            attacker_obj = self.api.process_character(attacker)
+            attacker_obj = self.api.process_attacker(attacker)
             if attacker_obj:
                 self.attackers.add(attacker_obj)
-                ItemType.objects.get_or_create_from_code(attacker['weapon_type_id'], attacker, self.api)
         self.save()

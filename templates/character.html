@@ -1,0 +1,57 @@
+{% extends 'killmails.html' %}
+
+{% block secondary_tables %}
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <table class="kb-table kb-kill-details__victim">
+                    <tr>
+                        <td rowspan="3" class="kb-table-footer">
+                            <img class="kb-icon-64"
+                                 src="https://image.eveonline.com/Character/{{ character.id }}_64.jpg" alt="">
+                        </td>
+                        <td>Character:</td>
+                        <td>{{ character.name }}</td>
+
+                        {% if character.alliance %}
+                            <td rowspan=3 class="kb-table-footer">
+                                <img class="kb-icon-64"
+                                     src="https://image.eveonline.com/Alliance/{{ character.alliance.id }}_64.png"
+                                     alt="">
+                            </td>
+                        {% else %}
+                            <td rowspan=3 class="kb-table-footer"></td>
+                        {% endif %}
+                    </tr>
+
+                    <tr>
+                        <td>Corp:</td>
+                        <td><a href="/corporation/{{ character.corporation.id }}">{{ character.corporation.name }}</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ 'Faction' if character.faction else 'Alliance' }}:</td>
+                        <td>{{ character.alliance.name }}</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <div>Kills: {{ stats.kills }}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Losses: {{ stats.losses }}</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
