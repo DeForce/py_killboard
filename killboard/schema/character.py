@@ -38,7 +38,7 @@ class Attacker(models.Model):
     alliance = models.ForeignKey(Alliance, on_delete=models.DO_NOTHING, null=True)
 
     ship = models.ForeignKey(Ship, on_delete=models.DO_NOTHING)
-    weapon = models.ForeignKey(ItemType, on_delete=models.DO_NOTHING)
+    weapon = models.ForeignKey(ItemType, on_delete=models.DO_NOTHING, null=True)
     damage_done = models.FloatField()
     final_blow = models.BooleanField()
 

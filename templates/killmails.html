@@ -13,10 +13,18 @@
             <th><abbr title="Involved Parties">Inv</abbr></th>
             <th>C</th>
         </tr>
+        {% set date = {} %}
         {% for killmail in killmails %}
             {% set is_ally = killmail.victim.id in allies
             or killmail.corporation.id in allies
             or killmail.alliance.id in allies %}
+            {% set current_date = killmail.km_date.strftime('%d %B %Y') %}
+            {% if date.last != current_date %}
+            <tr>
+                <td colspan="9">{{ current_date }}</td>
+            </tr>
+            {% endif %}
+            {% set _ = date.update({'last': current_date}) %}
             <tr class="{{ 'kb-table-killmail-loss' if is_ally else 'kb-table-killmail-win' }} kb-table-killmail">
                 <td class="kb-table-killmail-column">
                     <table>
@@ -83,4 +91,22 @@
         {% endfor %}
         </tbody>
     </table>
+{% endblock %}
+
+{% block right_block %}
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div>Top Kills:</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        HelloWorld
+                    </td>
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

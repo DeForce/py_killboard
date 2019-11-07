@@ -5,14 +5,16 @@
         <td class="kb-table-row-involved">
             <table>
                 <tr>
-                    <td><img class="kb-icon-32"
-                             src="https://image.eveonline.com/Character/{{ attacker_data.character.id }}_32.jpg"
-                             alt=""></td>
-                    <td>
-                        <div>
-                            <a href="/character/{{ attacker_data.character.id }}">{{ attacker_data.character.name }}</a>
-                        </div>
-                    </td>
+                    {% if attacker_data.character %}
+                        <td><img class="kb-icon-32"
+                                 src="https://image.eveonline.com/Character/{{ attacker_data.character.id }}_32.jpg"
+                                 alt=""></td>
+                        <td>
+                            <div>
+                                <a href="/character/{{ attacker_data.character.id }}">{{ attacker_data.character.name }}</a>
+                            </div>
+                        </td>
+                    {% endif %}
                 </tr>
                 <tr>
                     <td><img class="kb-icon-32"
@@ -21,13 +23,16 @@
                         <div>{{ attacker_data.ship.name }}</div>
                     </td>
                 </tr>
-                <tr>
-                    <td><img class="kb-icon-32"
-                             src="https://image.eveonline.com/Type/{{ attacker_data.weapon.id }}_32.png" alt=""></td>
-                    <td>
-                        <div>{{ attacker_data.weapon.name }}</div>
-                    </td>
-                </tr>
+                {% if attacker_data.weapon %}
+                    <tr>
+                        <td><img class="kb-icon-32"
+                                 src="https://image.eveonline.com/Type/{{ attacker_data.weapon.id }}_32.png" alt="">
+                        </td>
+                        <td>
+                            <div>{{ attacker_data.weapon.name }}</div>
+                        </td>
+                    </tr>
+                {% endif %}
             </table>
         </td>
         <td>
@@ -40,27 +45,40 @@
 
 {% macro process_items(items) %}
     <table>
+        <thead>
+        <tr>
+            <th>Slot</th>
+            <th colspan="2">Item</th>
+            <th>Q</th>
+        </tr>
+        </thead>
+        <tbody>
         {% for flag_id, item_list in items.items() %}
             {% if item_list %}
                 {% for item in item_list %}
-                <tr class="kb-table-killmail-item">
-                    <td>
-                        <div>{{ item.flag_name_text }}</div>
-                    </td>
-                    <td><img class="kb-icon-32"
-                             src="https://image.eveonline.com/Type/{{ item.id }}_32.png" alt=""></td>
-                    <td>
-                        <div>{{ item.name }}</div>
-                    </td>
-                    <td>
-                        <div>{{ item.quantity_dropped }}/{{ item.quantity_destroyed }}/{{ item.quantity_dropped + item.quantity_destroyed }}</div>
-                    </td>
-                </tr>
+                    {% for quantity in ['quantity_dropped', 'quantity_destroyed'] %}
+                        {% if item[quantity] %}
+                            <tr class="kb-table-killmail-item {{ quantity }}">
+                                <td>
+                                    <div>{{ item.flag_name_text.replace('power ', '') }}</div>
+                                </td>
+                                <td>
+                                    <img class="kb-icon-32"
+                                         src="https://image.eveonline.com/Type/{{ item.id }}_32.png" alt=""></td>
+                                <td>
+                                    <div>{{ item.name }}</div>
+                                </td>
+                                <td>
+                                    <div>{{ item[quantity] }}</div>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             {% else %}
                 <tr class="kb-table-killmail-item">
                     <td>
-                        <div>{{ flags[flag_id].flagText }}</div>
+                        <div>{{ flags[flag_id].flagText.replace('power ', '') }}</div>
                     </td>
                     <td></td>
                     <td>
@@ -70,6 +88,7 @@
                 </tr>
             {% endif %}
         {% endfor %}
+        </tbody>
     </table>
 {% endmacro %}
 
@@ -77,17 +96,17 @@
 {% block main_tables %}
     <table class="kb-subtable tb-table-kill-details">
         <tr>
-            <td>
-                <table class="kb-table kb-kill-details__victim">
+            <td class="kb-kill-details__victim">
+                <table class="kb-table">
                     <tr>
                         <td rowspan="3" class="kb-table-footer">
                             <img class="kb-icon-64"
                                  src="https://image.eveonline.com/Character/{{ killmail.victim.id }}_64.jpg" alt="">
                         </td>
                         <td>Victim</td>
-                        <td>{{ killmail.victim.name }}</td>
+                        <td><a href="/character/{{ killmail.victim.id }}">{{ killmail.victim.name }}</a></td>
 
-                        {% if killmail.victim.alliance %}
+                        {% if killmail.alliance %}
                             <td rowspan=3 class="kb-table-footer">
                                 <img class="kb-icon-64"
                                      src="https://image.eveonline.com/Alliance/{{ killmail.alliance.id }}_64.png"
@@ -98,12 +117,20 @@
 
                     <tr>
                         <td>Corp:</td>
-                        <td>{{ killmail.victim.corporation.name }}</td>
+                        <td><a href="/corporation/{{ killmail.corporation.id }}">{{ killmail.corporation.name }}</a>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td>{{ 'Faction' if killmail.victim.faction else 'Alliance' }}:</td>
-                        <td>{{ killmail.victim.alliance.name }}</td>
+                        {% if killmail.faction %}
+                            <td>Faction:</td>
+                            <td>{{ killmail.faction.name }}</td>
+                        {% elif killmail.alliance %}
+                            <td>Alliance:</td>
+                            <td><a href="/alliance/{{ killmail.alliance.id }}">{{ killmail.alliance.name }}</a></td>
+                        {% else %}
+                            <td rowspan="2"></td>
+                        {% endif %}
                     </tr>
                 </table>
 

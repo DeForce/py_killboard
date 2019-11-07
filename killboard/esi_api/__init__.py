@@ -1,9 +1,8 @@
-from __future__ import unicode_literals
-
 from urllib import parse
 
-from bravado.client import SwaggerClient, CONFIG_DEFAULTS
+from bravado.client import SwaggerClient
 from bravado import requests_client
+from bravado.config import CONFIG_DEFAULTS
 from bravado.swagger_model import Loader
 from bravado_core.spec import Spec
 from django.core.cache import cache
@@ -143,3 +142,6 @@ def esi_client_factory(token=None, datasource=None, spec_file=None, version=None
     else:
         spec = build_spec(api_version, http_client=client, **kwargs)
         return SwaggerClient(spec)
+
+
+global_api = esi_client_factory()

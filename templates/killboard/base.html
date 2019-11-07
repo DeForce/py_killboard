@@ -5,6 +5,8 @@
     'Secret': {'auth': True, 'url': '/secret'},
     'About': {'auth': False, 'url': '/about'},
 
+    'Admin': {'auth': True, 'url': '/admin', 'only_admin': True},
+
     'Login': {'auth': False, 'url': '/login', 'only_auth': True},
     'Logout': {'auth': True, 'url': '/logout'},
 } %}
@@ -24,7 +26,11 @@
 <table class="kb-table-main">
     <tbody>
     <tr>
-        <td>
+        <td class="left-block">
+            {% block left_block %}
+            {% endblock %}
+        </td>
+        <td class="center-block">
             <table>
                 <tr>
                     <td>
@@ -38,9 +44,17 @@
                 </tr>
                 <tr class="kb-menu">
                     {% for item, config in header_menu.items() %}
-                        {% if not user.is_authenticated and config['auth'] %}
-                        {% elif user.is_authenticated and config.get('only_auth', False) %}
-                        {% else %}
+                        {% set show_item = True %}
+
+                        {% if config.get('only_admin', False) and not user.is_staff %}
+                            {% set show_item = False %}
+                        {% elif config.get('auth', False) and not user.is_authenticated %}
+                            {% set show_item = False %}
+                        {% elif config.get('only_auth', False) and user.is_authenticated %}
+                            {% set show_item = False %}
+                        {% endif %}
+
+                        {% if show_item %}
                             <td>
                                 <div class="kb-menu-item"><a href="{{ config['url'] }}">{{ item }}</a></div>
                             </td>
@@ -53,6 +67,10 @@
             {% endblock %}
             <div class="spacer"></div>
             {% block main_tables %}
+            {% endblock %}
+        </td>
+        <td class="right-block">
+            {% block right_block %}
             {% endblock %}
         </td>
     </tr>

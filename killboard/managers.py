@@ -9,6 +9,7 @@ from requests_oauthlib import OAuth2Session
 
 from killboard import app_settings
 from killboard.errors import TokenError, IncompleteResponseError
+from killboard.esi_api import global_api
 
 logger = logging.getLogger(__name__)
 
@@ -123,7 +124,10 @@ class TokenManager(models.Manager):
 
 
 class EVEClassManager(models.Manager):
-    def get_or_create_from_code(self, i_id, json_data, api):
+    def get_or_create_from_code(self, i_id, json_data=None, api=None):
+        if api is None:
+            api = global_api
+
         try:
             return self.get(id=i_id), False
         except self.model.DoesNotExist:

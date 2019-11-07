@@ -2,6 +2,7 @@ import logging
 from itertools import chain
 
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -9,6 +10,7 @@ from helpers.eve_api_scopes import READ_KILLMAIL_PILOT
 from helpers.static import INVENTORY_POSITIONS, INV_FLAGS
 from killboard.killmails.process import download_killmails
 from killboard.models import Token
+from killboard.schema.admin.allies import AllianceAllies, CorporationAllies, CharacterAllies
 from killboard.schema.alliance import Alliance
 from killboard.schema.character import Character
 from killboard.schema.corporation import Corporation
@@ -16,9 +18,25 @@ from killboard.schema.killmail import Killmail
 from killboard.schema.solar_system import SolarSystem
 
 
+def create_top_list():
+    alliances = AllianceAllies.objects.all()
+    alliances = [Alliance.objects.get_or_create_from_code(ally.id, None) for ally in alliances]
+
+    kills = Killmail.objects.filter(attackers__character__alliance__in=AllianceAllies.objects.all()).aggregate(
+        dcount=Count('attackers__character'))
+    pass
+
+
 def index(request):
     killmails = Killmail.objects.all().order_by('-km_date')[:10]  # type: [Killmail]
-    return render(request, 'killmails.html', context={'killmails': killmails, 'allies': []})
+    alliance = list(item.id for item in AllianceAllies.objects.all())
+    corporations = list(item.id for item in CorporationAllies.objects.all())
+    characters = list(item.id for item in CharacterAllies.objects.all())
+
+    top_list = create_top_list()
+
+    return render(request, 'killmails.html', context={'killmails': killmails,
+                                                      'allies': alliance + corporations + characters})
 
 
 def open_killmail(request, killmail_id):

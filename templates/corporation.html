@@ -30,8 +30,16 @@
                     </tr>
 
                     <tr>
-                        <td>{{ 'Faction' if corporation.faction else 'Alliance' }}:</td>
-                        <td>{{ corporation.alliance.name }}</td>
+                        {% if corporation.faction %}
+                            <td>Faction:</td>
+                            <td><a href="/faction/{{ corporation.faction.id }}">{{ corporation.faction.name }}</a></td>
+                        {% elif corporation.alliance %}
+                            <td>Alliance:</td>
+                            <td><a href="/alliance/{{ corporation.alliance.id }}">{{ corporation.alliance.name }}</a>
+                            </td>
+                        {% else %}
+                            <td rowspan="2"></td>
+                        {% endif %}
                     </tr>
                 </table>
             </td>
